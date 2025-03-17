@@ -22,6 +22,8 @@ gem "jbuilder"
 
 gem "responders"
 
+gem 'react-rails', "~> 2.7.1"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
