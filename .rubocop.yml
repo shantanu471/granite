@@ -446,7 +446,6 @@ Layout/LeadingCommentSpace:
 # puts 'Hello' # Return character is LF on all platfoms.
 Layout/EndOfLine:
   Enabled: false
-  EnforcedStyle: lf
 
 # In a regular module definition, no empty lines around the body.
 Layout/EmptyLinesAroundModuleBody:
