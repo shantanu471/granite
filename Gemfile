@@ -70,3 +70,5 @@ end
 #   gem "capybara"
 #   gem "selenium-webdriver"
 # end
+
+gem "pry-byebug"
