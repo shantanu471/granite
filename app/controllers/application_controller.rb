@@ -61,8 +61,4 @@ class ApplicationController < ActionController::Base
   def render_json(json = {}, status = :ok)
     render status:, json:
   end
-
-  def errors_to_sentence
-    errors.full_messages.to_sentence
-  end
 end
