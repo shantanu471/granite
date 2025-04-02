@@ -4,13 +4,12 @@ import { useHistory, useParams } from "react-router-dom";
 
 import tasksApi from "apis/tasks";
 import { Button, Container, PageLoader } from "components/commons";
-import Logger from "js-logger";
 
 const Show = () => {
   const [task, setTask] = useState([]);
-  const [user, setUser] = useState([]);
   const [pageLoading, setPageLoading] = useState(true);
   const { slug } = useParams();
+
   const history = useHistory();
 
   const updateTask = () => {
@@ -20,13 +19,12 @@ const Show = () => {
   const fetchTaskDetails = async () => {
     try {
       const {
-        data: { task, assigned_user },
+        data: { task },
       } = await tasksApi.show(slug);
-      setUser(assigned_user);
       setTask(task);
       setPageLoading(false);
     } catch (error) {
-      Logger.error(error);
+      logger.error(error);
       history.push("/");
     }
   };
@@ -48,17 +46,19 @@ const Show = () => {
             <div className="flex items-center gap-x-6">
               <p className="text-base text-gray-700">
                 <span className="font-semibold">Assigned to: </span>
-                {user?.name}
+                {task?.assigned_user?.name}
               </p>
             </div>
           </div>
-          <Button
-            buttonText="Edit"
-            icon="edit-line"
-            size="small"
-            style="secondary"
-            onClick={updateTask}
-          />
+          <div className="flex items-center justify-end gap-x-3">
+            <Button
+              buttonText="Edit"
+              icon="edit-line"
+              size="small"
+              style="secondary"
+              onClick={updateTask}
+            />
+          </div>
         </div>
       </div>
     </Container>

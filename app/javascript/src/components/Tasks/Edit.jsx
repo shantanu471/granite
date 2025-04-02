@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-import { useParams } from "react-router-dom";
-
 import tasksApi from "apis/tasks";
 import usersApi from "apis/users";
 import { Container, PageLoader, PageTitle } from "components/commons";
+import { useParams } from "react-router-dom";
 
 import Form from "./Form";
-import Logger from "js-logger";
 
 const Edit = ({ history }) => {
   const [title, setTitle] = useState("");
@@ -29,7 +27,7 @@ const Edit = ({ history }) => {
       history.push("/dashboard");
     } catch (error) {
       setLoading(false);
-      Logger.error(error);
+      logger.error(error);
     }
   };
 
@@ -40,7 +38,7 @@ const Edit = ({ history }) => {
       } = await usersApi.fetch();
       setUsers(users);
     } catch (error) {
-      Logger.error(error);
+      logger.error(error);
     }
   };
 
@@ -53,9 +51,9 @@ const Edit = ({ history }) => {
       } = await tasksApi.show(slug);
       setTitle(title);
       setAssignedUser(assigned_user);
-      setUserId(assigned_user?.id);
+      setUserId(assigned_user.id);
     } catch (error) {
-      Logger.error(error);
+      logger.error(error);
     }
   };
 
@@ -85,7 +83,6 @@ const Edit = ({ history }) => {
           handleSubmit={handleSubmit}
           loading={loading}
           setTitle={setTitle}
-          userId={userId}
           setUserId={setUserId}
           title={title}
           users={users}
