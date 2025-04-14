@@ -37,4 +37,7 @@ en:
     slug:
       immutable: "is immutable!"
 
+  authorization:
+    denied: "Access denied. You are not authorized to perform this action."
+
   generic_error: "Something went wrong. Please try again later."
