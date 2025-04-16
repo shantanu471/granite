@@ -18,6 +18,7 @@ class User < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX }
   validates :password, length: { minimum: MIN_PASSWORD_LENGTH }, if: -> { password.present? }
   validates :password_confirmation, presence: true, on: :create
+
   before_destroy :assign_tasks_to_task_owners
 
   has_secure_password
