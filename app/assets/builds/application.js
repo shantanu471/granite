@@ -10,9 +10,9 @@ var __esm = (fn, res) => function __init() {
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
-var __export = (target, all3) => {
-  for (var name in all3)
-    __defProp(target, name, { get: all3[name], enumerable: true });
+var __export = (target, all5) => {
+  for (var name in all5)
+    __defProp(target, name, { get: all5[name], enumerable: true });
 };
 var __copyProps = (to, from2, except, desc) => {
   if (from2 && typeof from2 === "object" || typeof from2 === "function") {
@@ -1110,29 +1110,29 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect11(create2, deps) {
+        function useEffect11(create3, deps) {
           var dispatcher = resolveDispatcher();
-          return dispatcher.useEffect(create2, deps);
+          return dispatcher.useEffect(create3, deps);
         }
-        function useInsertionEffect4(create2, deps) {
+        function useInsertionEffect4(create3, deps) {
           var dispatcher = resolveDispatcher();
-          return dispatcher.useInsertionEffect(create2, deps);
+          return dispatcher.useInsertionEffect(create3, deps);
         }
-        function useLayoutEffect6(create2, deps) {
+        function useLayoutEffect6(create3, deps) {
           var dispatcher = resolveDispatcher();
-          return dispatcher.useLayoutEffect(create2, deps);
+          return dispatcher.useLayoutEffect(create3, deps);
         }
         function useCallback6(callback, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useCallback(callback, deps);
         }
-        function useMemo6(create2, deps) {
+        function useMemo6(create3, deps) {
           var dispatcher = resolveDispatcher();
-          return dispatcher.useMemo(create2, deps);
+          return dispatcher.useMemo(create3, deps);
         }
-        function useImperativeHandle(ref, create2, deps) {
+        function useImperativeHandle(ref, create3, deps) {
           var dispatcher = resolveDispatcher();
-          return dispatcher.useImperativeHandle(ref, create2, deps);
+          return dispatcher.useImperativeHandle(ref, create3, deps);
         }
         function useDebugValue(value, formatterFn) {
           {
@@ -1748,18 +1748,18 @@ var require_react_development = __commonJS({
               var thenableResult = result;
               var wasAwaited = false;
               var thenable = {
-                then: function(resolve, reject) {
+                then: function(resolve, reject3) {
                   wasAwaited = true;
                   thenableResult.then(function(returnValue2) {
                     popActScope(prevActScopeDepth);
                     if (actScopeDepth === 0) {
-                      recursivelyFlushAsyncActWork(returnValue2, resolve, reject);
+                      recursivelyFlushAsyncActWork(returnValue2, resolve, reject3);
                     } else {
                       resolve(returnValue2);
                     }
                   }, function(error3) {
                     popActScope(prevActScopeDepth);
-                    reject(error3);
+                    reject3(error3);
                   });
                 }
               };
@@ -1785,10 +1785,10 @@ var require_react_development = __commonJS({
                   ReactCurrentActQueue.current = null;
                 }
                 var _thenable = {
-                  then: function(resolve, reject) {
+                  then: function(resolve, reject3) {
                     if (ReactCurrentActQueue.current === null) {
                       ReactCurrentActQueue.current = [];
-                      recursivelyFlushAsyncActWork(returnValue, resolve, reject);
+                      recursivelyFlushAsyncActWork(returnValue, resolve, reject3);
                     } else {
                       resolve(returnValue);
                     }
@@ -1797,7 +1797,7 @@ var require_react_development = __commonJS({
                 return _thenable;
               } else {
                 var _thenable2 = {
-                  then: function(resolve, reject) {
+                  then: function(resolve, reject3) {
                     resolve(returnValue);
                   }
                 };
@@ -1814,7 +1814,7 @@ var require_react_development = __commonJS({
             actScopeDepth = prevActScopeDepth;
           }
         }
-        function recursivelyFlushAsyncActWork(returnValue, resolve, reject) {
+        function recursivelyFlushAsyncActWork(returnValue, resolve, reject3) {
           {
             var queue2 = ReactCurrentActQueue.current;
             if (queue2 !== null) {
@@ -1825,11 +1825,11 @@ var require_react_development = __commonJS({
                     ReactCurrentActQueue.current = null;
                     resolve(returnValue);
                   } else {
-                    recursivelyFlushAsyncActWork(returnValue, resolve, reject);
+                    recursivelyFlushAsyncActWork(returnValue, resolve, reject3);
                   }
                 });
               } catch (error3) {
-                reject(error3);
+                reject3(error3);
               }
             } else {
               resolve(returnValue);
@@ -2401,9 +2401,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React34 = require_react();
+        var React35 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React34.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React35.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -3702,7 +3702,7 @@ var require_react_dom_development = __commonJS({
             isRendering = rendering;
           }
         }
-        function toString4(value) {
+        function toString6(value) {
           return "" + value;
         }
         function getToStringValue(value) {
@@ -3907,10 +3907,10 @@ var require_react_dom_development = __commonJS({
               if (value === 0 && node2.value === "" || // We explicitly want to coerce to number here if possible.
               // eslint-disable-next-line
               node2.value != value) {
-                node2.value = toString4(value);
+                node2.value = toString6(value);
               }
-            } else if (node2.value !== toString4(value)) {
-              node2.value = toString4(value);
+            } else if (node2.value !== toString6(value)) {
+              node2.value = toString6(value);
             }
           } else if (type3 === "submit" || type3 === "reset") {
             node2.removeAttribute("value");
@@ -3937,7 +3937,7 @@ var require_react_dom_development = __commonJS({
             if (isButton && (props.value === void 0 || props.value === null)) {
               return;
             }
-            var initialValue = toString4(node2._wrapperState.initialValue);
+            var initialValue = toString6(node2._wrapperState.initialValue);
             if (!isHydrating2) {
               {
                 if (initialValue !== node2.value) {
@@ -3997,9 +3997,9 @@ var require_react_dom_development = __commonJS({
             type3 !== "number" || getActiveElement(node2.ownerDocument) !== node2
           ) {
             if (value == null) {
-              node2.defaultValue = toString4(node2._wrapperState.initialValue);
-            } else if (node2.defaultValue !== toString4(value)) {
-              node2.defaultValue = toString4(value);
+              node2.defaultValue = toString6(node2._wrapperState.initialValue);
+            } else if (node2.defaultValue !== toString6(value)) {
+              node2.defaultValue = toString6(value);
             }
           }
         }
@@ -4010,7 +4010,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React34.Children.forEach(props.children, function(child) {
+                React35.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -4037,7 +4037,7 @@ var require_react_dom_development = __commonJS({
         }
         function postMountWrapper$1(element, props) {
           if (props.value != null) {
-            element.setAttribute("value", toString4(getToStringValue(props.value)));
+            element.setAttribute("value", toString6(getToStringValue(props.value)));
           }
         }
         var isArrayImpl = Array.isArray;
@@ -4091,7 +4091,7 @@ var require_react_dom_development = __commonJS({
               }
             }
           } else {
-            var _selectedValue = toString4(getToStringValue(propValue));
+            var _selectedValue = toString6(getToStringValue(propValue));
             var defaultSelected = null;
             for (var _i2 = 0; _i2 < options3.length; _i2++) {
               if (options3[_i2].value === _selectedValue) {
@@ -4171,7 +4171,7 @@ var require_react_dom_development = __commonJS({
           var hostProps = assign2({}, props, {
             value: void 0,
             defaultValue: void 0,
-            children: toString4(node2._wrapperState.initialValue)
+            children: toString6(node2._wrapperState.initialValue)
           });
           return hostProps;
         }
@@ -4218,7 +4218,7 @@ var require_react_dom_development = __commonJS({
           var value = getToStringValue(props.value);
           var defaultValue = getToStringValue(props.defaultValue);
           if (value != null) {
-            var newValue = toString4(value);
+            var newValue = toString6(value);
             if (newValue !== node2.value) {
               node2.value = newValue;
             }
@@ -4227,7 +4227,7 @@ var require_react_dom_development = __commonJS({
             }
           }
           if (defaultValue != null) {
-            node2.defaultValue = toString4(defaultValue);
+            node2.defaultValue = toString6(defaultValue);
           }
         }
         function postMountWrapper$3(element, props) {
@@ -4407,9 +4407,9 @@ var require_react_dom_development = __commonJS({
           return prefix4 + key.charAt(0).toUpperCase() + key.substring(1);
         }
         var prefixes = ["Webkit", "ms", "Moz", "O"];
-        Object.keys(isUnitlessNumber).forEach(function(prop) {
+        Object.keys(isUnitlessNumber).forEach(function(prop3) {
           prefixes.forEach(function(prefix4) {
-            isUnitlessNumber[prefixKey(prefix4, prop)] = isUnitlessNumber[prop];
+            isUnitlessNumber[prefixKey(prefix4, prop3)] = isUnitlessNumber[prop3];
           });
         });
         function dangerousStyleValue(name, value, isCustomProperty3) {
@@ -5248,8 +5248,8 @@ var require_react_dom_development = __commonJS({
                 invalidProps.push(key);
               }
             }
-            var unknownPropString = invalidProps.map(function(prop) {
-              return "`" + prop + "`";
+            var unknownPropString = invalidProps.map(function(prop3) {
+              return "`" + prop3 + "`";
             }).join(", ");
             if (invalidProps.length === 1) {
               error2("Invalid aria prop %s on <%s> tag. For details, see https://reactjs.org/link/invalid-aria-props", unknownPropString, type3);
@@ -5391,8 +5391,8 @@ var require_react_dom_development = __commonJS({
                 unknownProps.push(key);
               }
             }
-            var unknownPropString = unknownProps.map(function(prop) {
-              return "`" + prop + "`";
+            var unknownPropString = unknownProps.map(function(prop3) {
+              return "`" + prop3 + "`";
             }).join(", ");
             if (unknownProps.length === 1) {
               error2("Invalid value for prop %s on <%s> tag. Either remove it from the element, or pass a string or number value to keep it in the DOM. For details, see https://reactjs.org/link/attribute-behavior ", unknownPropString, type3);
@@ -13995,10 +13995,10 @@ var require_react_dom_development = __commonJS({
         function rerenderState(initialState) {
           return rerenderReducer(basicStateReducer);
         }
-        function pushEffect(tag, create2, destroy2, deps) {
+        function pushEffect(tag, create3, destroy2, deps) {
           var effect = {
             tag,
-            create: create2,
+            create: create3,
             destroy: destroy2,
             deps,
             // Circular
@@ -14036,13 +14036,13 @@ var require_react_dom_development = __commonJS({
           var hook = updateWorkInProgressHook();
           return hook.memoizedState;
         }
-        function mountEffectImpl(fiberFlags, hookFlags, create2, deps) {
+        function mountEffectImpl(fiberFlags, hookFlags, create3, deps) {
           var hook = mountWorkInProgressHook();
           var nextDeps = deps === void 0 ? null : deps;
           currentlyRenderingFiber$1.flags |= fiberFlags;
-          hook.memoizedState = pushEffect(HasEffect | hookFlags, create2, void 0, nextDeps);
+          hook.memoizedState = pushEffect(HasEffect | hookFlags, create3, void 0, nextDeps);
         }
-        function updateEffectImpl(fiberFlags, hookFlags, create2, deps) {
+        function updateEffectImpl(fiberFlags, hookFlags, create3, deps) {
           var hook = updateWorkInProgressHook();
           var nextDeps = deps === void 0 ? null : deps;
           var destroy2 = void 0;
@@ -14052,31 +14052,31 @@ var require_react_dom_development = __commonJS({
             if (nextDeps !== null) {
               var prevDeps = prevEffect.deps;
               if (areHookInputsEqual(nextDeps, prevDeps)) {
-                hook.memoizedState = pushEffect(hookFlags, create2, destroy2, nextDeps);
+                hook.memoizedState = pushEffect(hookFlags, create3, destroy2, nextDeps);
                 return;
               }
             }
           }
           currentlyRenderingFiber$1.flags |= fiberFlags;
-          hook.memoizedState = pushEffect(HasEffect | hookFlags, create2, destroy2, nextDeps);
+          hook.memoizedState = pushEffect(HasEffect | hookFlags, create3, destroy2, nextDeps);
         }
-        function mountEffect(create2, deps) {
+        function mountEffect(create3, deps) {
           if ((currentlyRenderingFiber$1.mode & StrictEffectsMode) !== NoMode) {
-            return mountEffectImpl(MountPassiveDev | Passive | PassiveStatic, Passive$1, create2, deps);
+            return mountEffectImpl(MountPassiveDev | Passive | PassiveStatic, Passive$1, create3, deps);
           } else {
-            return mountEffectImpl(Passive | PassiveStatic, Passive$1, create2, deps);
+            return mountEffectImpl(Passive | PassiveStatic, Passive$1, create3, deps);
           }
         }
-        function updateEffect(create2, deps) {
-          return updateEffectImpl(Passive, Passive$1, create2, deps);
+        function updateEffect(create3, deps) {
+          return updateEffectImpl(Passive, Passive$1, create3, deps);
         }
-        function mountInsertionEffect(create2, deps) {
-          return mountEffectImpl(Update, Insertion3, create2, deps);
+        function mountInsertionEffect(create3, deps) {
+          return mountEffectImpl(Update, Insertion3, create3, deps);
         }
-        function updateInsertionEffect(create2, deps) {
-          return updateEffectImpl(Update, Insertion3, create2, deps);
+        function updateInsertionEffect(create3, deps) {
+          return updateEffectImpl(Update, Insertion3, create3, deps);
         }
-        function mountLayoutEffect(create2, deps) {
+        function mountLayoutEffect(create3, deps) {
           var fiberFlags = Update;
           {
             fiberFlags |= LayoutStatic;
@@ -14084,15 +14084,15 @@ var require_react_dom_development = __commonJS({
           if ((currentlyRenderingFiber$1.mode & StrictEffectsMode) !== NoMode) {
             fiberFlags |= MountLayoutDev;
           }
-          return mountEffectImpl(fiberFlags, Layout, create2, deps);
+          return mountEffectImpl(fiberFlags, Layout, create3, deps);
         }
-        function updateLayoutEffect(create2, deps) {
-          return updateEffectImpl(Update, Layout, create2, deps);
+        function updateLayoutEffect(create3, deps) {
+          return updateEffectImpl(Update, Layout, create3, deps);
         }
-        function imperativeHandleEffect(create2, ref) {
+        function imperativeHandleEffect(create3, ref) {
           if (typeof ref === "function") {
             var refCallback = ref;
-            var _inst = create2();
+            var _inst = create3();
             refCallback(_inst);
             return function() {
               refCallback(null);
@@ -14104,17 +14104,17 @@ var require_react_dom_development = __commonJS({
                 error2("Expected useImperativeHandle() first argument to either be a ref callback or React.createRef() object. Instead received: %s.", "an object with keys {" + Object.keys(refObject).join(", ") + "}");
               }
             }
-            var _inst2 = create2();
+            var _inst2 = create3();
             refObject.current = _inst2;
             return function() {
               refObject.current = null;
             };
           }
         }
-        function mountImperativeHandle(ref, create2, deps) {
+        function mountImperativeHandle(ref, create3, deps) {
           {
-            if (typeof create2 !== "function") {
-              error2("Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.", create2 !== null ? typeof create2 : "null");
+            if (typeof create3 !== "function") {
+              error2("Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.", create3 !== null ? typeof create3 : "null");
             }
           }
           var effectDeps = deps !== null && deps !== void 0 ? deps.concat([ref]) : null;
@@ -14125,16 +14125,16 @@ var require_react_dom_development = __commonJS({
           if ((currentlyRenderingFiber$1.mode & StrictEffectsMode) !== NoMode) {
             fiberFlags |= MountLayoutDev;
           }
-          return mountEffectImpl(fiberFlags, Layout, imperativeHandleEffect.bind(null, create2, ref), effectDeps);
+          return mountEffectImpl(fiberFlags, Layout, imperativeHandleEffect.bind(null, create3, ref), effectDeps);
         }
-        function updateImperativeHandle(ref, create2, deps) {
+        function updateImperativeHandle(ref, create3, deps) {
           {
-            if (typeof create2 !== "function") {
-              error2("Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.", create2 !== null ? typeof create2 : "null");
+            if (typeof create3 !== "function") {
+              error2("Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.", create3 !== null ? typeof create3 : "null");
             }
           }
           var effectDeps = deps !== null && deps !== void 0 ? deps.concat([ref]) : null;
-          return updateEffectImpl(Update, Layout, imperativeHandleEffect.bind(null, create2, ref), effectDeps);
+          return updateEffectImpl(Update, Layout, imperativeHandleEffect.bind(null, create3, ref), effectDeps);
         }
         function mountDebugValue(value, formatterFn) {
         }
@@ -14456,38 +14456,38 @@ var require_react_dom_development = __commonJS({
               mountHookTypesDev();
               return readContext(context2);
             },
-            useEffect: function(create2, deps) {
+            useEffect: function(create3, deps) {
               currentHookNameInDev = "useEffect";
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
-              return mountEffect(create2, deps);
+              return mountEffect(create3, deps);
             },
-            useImperativeHandle: function(ref, create2, deps) {
+            useImperativeHandle: function(ref, create3, deps) {
               currentHookNameInDev = "useImperativeHandle";
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
-              return mountImperativeHandle(ref, create2, deps);
+              return mountImperativeHandle(ref, create3, deps);
             },
-            useInsertionEffect: function(create2, deps) {
+            useInsertionEffect: function(create3, deps) {
               currentHookNameInDev = "useInsertionEffect";
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
-              return mountInsertionEffect(create2, deps);
+              return mountInsertionEffect(create3, deps);
             },
-            useLayoutEffect: function(create2, deps) {
+            useLayoutEffect: function(create3, deps) {
               currentHookNameInDev = "useLayoutEffect";
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
-              return mountLayoutEffect(create2, deps);
+              return mountLayoutEffect(create3, deps);
             },
-            useMemo: function(create2, deps) {
+            useMemo: function(create3, deps) {
               currentHookNameInDev = "useMemo";
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
               try {
-                return mountMemo(create2, deps);
+                return mountMemo(create3, deps);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14565,33 +14565,33 @@ var require_react_dom_development = __commonJS({
               updateHookTypesDev();
               return readContext(context2);
             },
-            useEffect: function(create2, deps) {
+            useEffect: function(create3, deps) {
               currentHookNameInDev = "useEffect";
               updateHookTypesDev();
-              return mountEffect(create2, deps);
+              return mountEffect(create3, deps);
             },
-            useImperativeHandle: function(ref, create2, deps) {
+            useImperativeHandle: function(ref, create3, deps) {
               currentHookNameInDev = "useImperativeHandle";
               updateHookTypesDev();
-              return mountImperativeHandle(ref, create2, deps);
+              return mountImperativeHandle(ref, create3, deps);
             },
-            useInsertionEffect: function(create2, deps) {
+            useInsertionEffect: function(create3, deps) {
               currentHookNameInDev = "useInsertionEffect";
               updateHookTypesDev();
-              return mountInsertionEffect(create2, deps);
+              return mountInsertionEffect(create3, deps);
             },
-            useLayoutEffect: function(create2, deps) {
+            useLayoutEffect: function(create3, deps) {
               currentHookNameInDev = "useLayoutEffect";
               updateHookTypesDev();
-              return mountLayoutEffect(create2, deps);
+              return mountLayoutEffect(create3, deps);
             },
-            useMemo: function(create2, deps) {
+            useMemo: function(create3, deps) {
               currentHookNameInDev = "useMemo";
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
               try {
-                return mountMemo(create2, deps);
+                return mountMemo(create3, deps);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14669,33 +14669,33 @@ var require_react_dom_development = __commonJS({
               updateHookTypesDev();
               return readContext(context2);
             },
-            useEffect: function(create2, deps) {
+            useEffect: function(create3, deps) {
               currentHookNameInDev = "useEffect";
               updateHookTypesDev();
-              return updateEffect(create2, deps);
+              return updateEffect(create3, deps);
             },
-            useImperativeHandle: function(ref, create2, deps) {
+            useImperativeHandle: function(ref, create3, deps) {
               currentHookNameInDev = "useImperativeHandle";
               updateHookTypesDev();
-              return updateImperativeHandle(ref, create2, deps);
+              return updateImperativeHandle(ref, create3, deps);
             },
-            useInsertionEffect: function(create2, deps) {
+            useInsertionEffect: function(create3, deps) {
               currentHookNameInDev = "useInsertionEffect";
               updateHookTypesDev();
-              return updateInsertionEffect(create2, deps);
+              return updateInsertionEffect(create3, deps);
             },
-            useLayoutEffect: function(create2, deps) {
+            useLayoutEffect: function(create3, deps) {
               currentHookNameInDev = "useLayoutEffect";
               updateHookTypesDev();
-              return updateLayoutEffect(create2, deps);
+              return updateLayoutEffect(create3, deps);
             },
-            useMemo: function(create2, deps) {
+            useMemo: function(create3, deps) {
               currentHookNameInDev = "useMemo";
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                return updateMemo(create2, deps);
+                return updateMemo(create3, deps);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14773,33 +14773,33 @@ var require_react_dom_development = __commonJS({
               updateHookTypesDev();
               return readContext(context2);
             },
-            useEffect: function(create2, deps) {
+            useEffect: function(create3, deps) {
               currentHookNameInDev = "useEffect";
               updateHookTypesDev();
-              return updateEffect(create2, deps);
+              return updateEffect(create3, deps);
             },
-            useImperativeHandle: function(ref, create2, deps) {
+            useImperativeHandle: function(ref, create3, deps) {
               currentHookNameInDev = "useImperativeHandle";
               updateHookTypesDev();
-              return updateImperativeHandle(ref, create2, deps);
+              return updateImperativeHandle(ref, create3, deps);
             },
-            useInsertionEffect: function(create2, deps) {
+            useInsertionEffect: function(create3, deps) {
               currentHookNameInDev = "useInsertionEffect";
               updateHookTypesDev();
-              return updateInsertionEffect(create2, deps);
+              return updateInsertionEffect(create3, deps);
             },
-            useLayoutEffect: function(create2, deps) {
+            useLayoutEffect: function(create3, deps) {
               currentHookNameInDev = "useLayoutEffect";
               updateHookTypesDev();
-              return updateLayoutEffect(create2, deps);
+              return updateLayoutEffect(create3, deps);
             },
-            useMemo: function(create2, deps) {
+            useMemo: function(create3, deps) {
               currentHookNameInDev = "useMemo";
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnRerenderInDEV;
               try {
-                return updateMemo(create2, deps);
+                return updateMemo(create3, deps);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14880,38 +14880,38 @@ var require_react_dom_development = __commonJS({
               mountHookTypesDev();
               return readContext(context2);
             },
-            useEffect: function(create2, deps) {
+            useEffect: function(create3, deps) {
               currentHookNameInDev = "useEffect";
               warnInvalidHookAccess();
               mountHookTypesDev();
-              return mountEffect(create2, deps);
+              return mountEffect(create3, deps);
             },
-            useImperativeHandle: function(ref, create2, deps) {
+            useImperativeHandle: function(ref, create3, deps) {
               currentHookNameInDev = "useImperativeHandle";
               warnInvalidHookAccess();
               mountHookTypesDev();
-              return mountImperativeHandle(ref, create2, deps);
+              return mountImperativeHandle(ref, create3, deps);
             },
-            useInsertionEffect: function(create2, deps) {
+            useInsertionEffect: function(create3, deps) {
               currentHookNameInDev = "useInsertionEffect";
               warnInvalidHookAccess();
               mountHookTypesDev();
-              return mountInsertionEffect(create2, deps);
+              return mountInsertionEffect(create3, deps);
             },
-            useLayoutEffect: function(create2, deps) {
+            useLayoutEffect: function(create3, deps) {
               currentHookNameInDev = "useLayoutEffect";
               warnInvalidHookAccess();
               mountHookTypesDev();
-              return mountLayoutEffect(create2, deps);
+              return mountLayoutEffect(create3, deps);
             },
-            useMemo: function(create2, deps) {
+            useMemo: function(create3, deps) {
               currentHookNameInDev = "useMemo";
               warnInvalidHookAccess();
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
               try {
-                return mountMemo(create2, deps);
+                return mountMemo(create3, deps);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -15001,38 +15001,38 @@ var require_react_dom_development = __commonJS({
               updateHookTypesDev();
               return readContext(context2);
             },
-            useEffect: function(create2, deps) {
+            useEffect: function(create3, deps) {
               currentHookNameInDev = "useEffect";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateEffect(create2, deps);
+              return updateEffect(create3, deps);
             },
-            useImperativeHandle: function(ref, create2, deps) {
+            useImperativeHandle: function(ref, create3, deps) {
               currentHookNameInDev = "useImperativeHandle";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateImperativeHandle(ref, create2, deps);
+              return updateImperativeHandle(ref, create3, deps);
             },
-            useInsertionEffect: function(create2, deps) {
+            useInsertionEffect: function(create3, deps) {
               currentHookNameInDev = "useInsertionEffect";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateInsertionEffect(create2, deps);
+              return updateInsertionEffect(create3, deps);
             },
-            useLayoutEffect: function(create2, deps) {
+            useLayoutEffect: function(create3, deps) {
               currentHookNameInDev = "useLayoutEffect";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateLayoutEffect(create2, deps);
+              return updateLayoutEffect(create3, deps);
             },
-            useMemo: function(create2, deps) {
+            useMemo: function(create3, deps) {
               currentHookNameInDev = "useMemo";
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                return updateMemo(create2, deps);
+                return updateMemo(create3, deps);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -15122,38 +15122,38 @@ var require_react_dom_development = __commonJS({
               updateHookTypesDev();
               return readContext(context2);
             },
-            useEffect: function(create2, deps) {
+            useEffect: function(create3, deps) {
               currentHookNameInDev = "useEffect";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateEffect(create2, deps);
+              return updateEffect(create3, deps);
             },
-            useImperativeHandle: function(ref, create2, deps) {
+            useImperativeHandle: function(ref, create3, deps) {
               currentHookNameInDev = "useImperativeHandle";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateImperativeHandle(ref, create2, deps);
+              return updateImperativeHandle(ref, create3, deps);
             },
-            useInsertionEffect: function(create2, deps) {
+            useInsertionEffect: function(create3, deps) {
               currentHookNameInDev = "useInsertionEffect";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateInsertionEffect(create2, deps);
+              return updateInsertionEffect(create3, deps);
             },
-            useLayoutEffect: function(create2, deps) {
+            useLayoutEffect: function(create3, deps) {
               currentHookNameInDev = "useLayoutEffect";
               warnInvalidHookAccess();
               updateHookTypesDev();
-              return updateLayoutEffect(create2, deps);
+              return updateLayoutEffect(create3, deps);
             },
-            useMemo: function(create2, deps) {
+            useMemo: function(create3, deps) {
               currentHookNameInDev = "useMemo";
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                return updateMemo(create2, deps);
+                return updateMemo(create3, deps);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -17479,7 +17479,7 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        function initSuspenseListRenderState(workInProgress2, isBackwards, tail, lastContentRow, tailMode) {
+        function initSuspenseListRenderState(workInProgress2, isBackwards, tail2, lastContentRow, tailMode) {
           var renderState = workInProgress2.memoizedState;
           if (renderState === null) {
             workInProgress2.memoizedState = {
@@ -17487,7 +17487,7 @@ var require_react_dom_development = __commonJS({
               rendering: null,
               renderingStartTime: 0,
               last: lastContentRow,
-              tail,
+              tail: tail2,
               tailMode
             };
           } else {
@@ -17495,7 +17495,7 @@ var require_react_dom_development = __commonJS({
             renderState.rendering = null;
             renderState.renderingStartTime = 0;
             renderState.last = lastContentRow;
-            renderState.tail = tail;
+            renderState.tail = tail2;
             renderState.tailMode = tailMode;
           }
         }
@@ -17527,19 +17527,19 @@ var require_react_dom_development = __commonJS({
             switch (revealOrder) {
               case "forwards": {
                 var lastContentRow = findLastContentRow(workInProgress2.child);
-                var tail;
+                var tail2;
                 if (lastContentRow === null) {
-                  tail = workInProgress2.child;
+                  tail2 = workInProgress2.child;
                   workInProgress2.child = null;
                 } else {
-                  tail = lastContentRow.sibling;
+                  tail2 = lastContentRow.sibling;
                   lastContentRow.sibling = null;
                 }
                 initSuspenseListRenderState(
                   workInProgress2,
                   false,
                   // isBackwards
-                  tail,
+                  tail2,
                   lastContentRow,
                   tailMode
                 );
@@ -18878,13 +18878,13 @@ var require_react_dom_development = __commonJS({
                     markComponentLayoutEffectMountStarted(finishedWork);
                   }
                 }
-                var create2 = effect.create;
+                var create3 = effect.create;
                 {
                   if ((flags & Insertion3) !== NoFlags$1) {
                     setIsRunningInsertionEffect(true);
                   }
                 }
-                effect.destroy = create2();
+                effect.destroy = create3();
                 {
                   if ((flags & Insertion3) !== NoFlags$1) {
                     setIsRunningInsertionEffect(false);
@@ -23577,9 +23577,9 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
     if (true) {
       (function() {
         "use strict";
-        var React34 = require_react();
+        var React35 = require_react();
         var ReactVersion = "18.3.1";
-        var ReactSharedInternals = React34.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React35.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn2(format) {
           {
             {
@@ -24185,9 +24185,9 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
           return prefix4 + key.charAt(0).toUpperCase() + key.substring(1);
         }
         var prefixes = ["Webkit", "ms", "Moz", "O"];
-        Object.keys(isUnitlessNumber).forEach(function(prop) {
+        Object.keys(isUnitlessNumber).forEach(function(prop3) {
           prefixes.forEach(function(prefix4) {
-            isUnitlessNumber[prefixKey(prefix4, prop)] = isUnitlessNumber[prop];
+            isUnitlessNumber[prefixKey(prefix4, prop3)] = isUnitlessNumber[prop3];
           });
         });
         var hasReadOnlyValue = {
@@ -24337,8 +24337,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
                 invalidProps.push(key);
               }
             }
-            var unknownPropString = invalidProps.map(function(prop) {
-              return "`" + prop + "`";
+            var unknownPropString = invalidProps.map(function(prop3) {
+              return "`" + prop3 + "`";
             }).join(", ");
             if (invalidProps.length === 1) {
               error2("Invalid aria prop %s on <%s> tag. For details, see https://reactjs.org/link/invalid-aria-props", unknownPropString, type3);
@@ -24969,8 +24969,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
                 unknownProps.push(key);
               }
             }
-            var unknownPropString = unknownProps.map(function(prop) {
-              return "`" + prop + "`";
+            var unknownPropString = unknownProps.map(function(prop3) {
+              return "`" + prop3 + "`";
             }).join(", ");
             if (unknownProps.length === 1) {
               error2("Invalid value for prop %s on <%s> tag. Either remove it from the element, or pass a string or number value to keep it in the DOM. For details, see https://reactjs.org/link/attribute-behavior ", unknownPropString, type3);
@@ -25485,7 +25485,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         }
         function flattenOptionChildren(children) {
           var content = "";
-          React34.Children.forEach(children, function(child) {
+          React35.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -27606,7 +27606,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
             return previousRef;
           }
         }
-        function useLayoutEffect6(create2, inputs) {
+        function useLayoutEffect6(create3, inputs) {
           {
             currentHookNameInDev = "useLayoutEffect";
             error2("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
@@ -28978,9 +28978,9 @@ var require_react_dom_server_browser_development = __commonJS({
     if (true) {
       (function() {
         "use strict";
-        var React34 = require_react();
+        var React35 = require_react();
         var ReactVersion = "18.3.1";
-        var ReactSharedInternals = React34.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React35.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn2(format) {
           {
             {
@@ -29628,9 +29628,9 @@ var require_react_dom_server_browser_development = __commonJS({
           return prefix4 + key.charAt(0).toUpperCase() + key.substring(1);
         }
         var prefixes = ["Webkit", "ms", "Moz", "O"];
-        Object.keys(isUnitlessNumber).forEach(function(prop) {
+        Object.keys(isUnitlessNumber).forEach(function(prop3) {
           prefixes.forEach(function(prefix4) {
-            isUnitlessNumber[prefixKey(prefix4, prop)] = isUnitlessNumber[prop];
+            isUnitlessNumber[prefixKey(prefix4, prop3)] = isUnitlessNumber[prop3];
           });
         });
         var hasReadOnlyValue = {
@@ -29780,8 +29780,8 @@ var require_react_dom_server_browser_development = __commonJS({
                 invalidProps.push(key);
               }
             }
-            var unknownPropString = invalidProps.map(function(prop) {
-              return "`" + prop + "`";
+            var unknownPropString = invalidProps.map(function(prop3) {
+              return "`" + prop3 + "`";
             }).join(", ");
             if (invalidProps.length === 1) {
               error2("Invalid aria prop %s on <%s> tag. For details, see https://reactjs.org/link/invalid-aria-props", unknownPropString, type3);
@@ -30412,8 +30412,8 @@ var require_react_dom_server_browser_development = __commonJS({
                 unknownProps.push(key);
               }
             }
-            var unknownPropString = unknownProps.map(function(prop) {
-              return "`" + prop + "`";
+            var unknownPropString = unknownProps.map(function(prop3) {
+              return "`" + prop3 + "`";
             }).join(", ");
             if (unknownProps.length === 1) {
               error2("Invalid value for prop %s on <%s> tag. Either remove it from the element, or pass a string or number value to keep it in the DOM. For details, see https://reactjs.org/link/attribute-behavior ", unknownPropString, type3);
@@ -30932,7 +30932,7 @@ var require_react_dom_server_browser_development = __commonJS({
         }
         function flattenOptionChildren(children) {
           var content = "";
-          React34.Children.forEach(children, function(child) {
+          React35.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -32989,7 +32989,7 @@ var require_react_dom_server_browser_development = __commonJS({
             return previousRef;
           }
         }
-        function useLayoutEffect6(create2, inputs) {
+        function useLayoutEffect6(create3, inputs) {
           {
             currentHookNameInDev = "useLayoutEffect";
             error2("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
@@ -34300,7 +34300,7 @@ var require_react_dom_server_browser_development = __commonJS({
           }
         }
         function renderToReadableStream(children, options2) {
-          return new Promise(function(resolve, reject) {
+          return new Promise(function(resolve, reject3) {
             var onFatalError;
             var onAllReady;
             var allReady = new Promise(function(res, rej) {
@@ -34329,7 +34329,7 @@ var require_react_dom_server_browser_development = __commonJS({
             function onShellError(error3) {
               allReady.catch(function() {
               });
-              reject(error3);
+              reject3(error3);
             }
             var request = createRequest(children, createResponseState(options2 ? options2.identifierPrefix : void 0, options2 ? options2.nonce : void 0, options2 ? options2.bootstrapScriptContent : void 0, options2 ? options2.bootstrapScripts : void 0, options2 ? options2.bootstrapModules : void 0), createRootFormatContext(options2 ? options2.namespaceURI : void 0), options2 ? options2.progressiveChunkSize : void 0, options2 ? options2.onError : void 0, onAllReady, onShellReady, onShellError, onFatalError);
             if (options2 && options2.signal) {
@@ -34740,7 +34740,7 @@ var init_renderHelpers = __esm({
 var require_react_ujs = __commonJS({
   "node_modules/react_ujs/react_ujs/index.js"(exports2, module2) {
     init_define_process_env();
-    var React34 = require_react();
+    var React35 = require_react();
     var ReactDOM4 = require_react_dom();
     var ReactDOMServer = require_server_browser();
     var detectEvents = require_detect();
@@ -34817,7 +34817,7 @@ var require_react_ujs = __commonJS({
       // using the specified `renderFunction` from `react-dom/server`.
       serverRender: function(renderFunction, componentName, props) {
         var componentClass = this.getConstructor(componentName);
-        var element = React34.createElement(componentClass, props);
+        var element = React35.createElement(componentClass, props);
         return ReactDOMServer[renderFunction](element);
       },
       // Within `searchSelector`, find nodes which should have React components
@@ -34843,7 +34843,7 @@ var require_react_ujs = __commonJS({
           } else {
             var component = this.components[cacheId];
             if (component === void 0) {
-              component = React34.createElement(constructor2, props);
+              component = React35.createElement(constructor2, props);
               if (turbolinksPermanent) {
                 this.components[cacheId] = component;
               }
@@ -36134,7 +36134,7 @@ var require_logger = __commonJS({
       Logger3.VERSION = "1.6.1";
       var logHandler;
       var contextualLoggersByNameMap = {};
-      var bind2 = function(scope, func) {
+      var bind4 = function(scope, func) {
         return function() {
           return func.apply(scope, arguments);
         };
@@ -36216,14 +36216,14 @@ var require_logger = __commonJS({
       var globalLogger = new ContextualLogger({ filterLevel: Logger3.OFF });
       (function() {
         var L = Logger3;
-        L.enabledFor = bind2(globalLogger, globalLogger.enabledFor);
-        L.trace = bind2(globalLogger, globalLogger.trace);
-        L.debug = bind2(globalLogger, globalLogger.debug);
-        L.time = bind2(globalLogger, globalLogger.time);
-        L.timeEnd = bind2(globalLogger, globalLogger.timeEnd);
-        L.info = bind2(globalLogger, globalLogger.info);
-        L.warn = bind2(globalLogger, globalLogger.warn);
-        L.error = bind2(globalLogger, globalLogger.error);
+        L.enabledFor = bind4(globalLogger, globalLogger.enabledFor);
+        L.trace = bind4(globalLogger, globalLogger.trace);
+        L.debug = bind4(globalLogger, globalLogger.debug);
+        L.time = bind4(globalLogger, globalLogger.time);
+        L.timeEnd = bind4(globalLogger, globalLogger.timeEnd);
+        L.info = bind4(globalLogger, globalLogger.info);
+        L.warn = bind4(globalLogger, globalLogger.warn);
+        L.error = bind4(globalLogger, globalLogger.error);
         L.log = L.info;
       })();
       Logger3.setHandler = function(func) {
@@ -36321,7 +36321,7 @@ var import_react_ujs = __toESM(require_react_ujs());
 
 // app/javascript/src/App.jsx
 init_define_process_env();
-var import_react38 = __toESM(require_react());
+var import_react39 = __toESM(require_react());
 
 // node_modules/ramda/es/index.js
 init_define_process_env();
@@ -36505,6 +36505,40 @@ init_define_process_env();
 
 // node_modules/ramda/es/internal/_curry3.js
 init_define_process_env();
+function _curry3(fn) {
+  return function f3(a, b, c) {
+    switch (arguments.length) {
+      case 0:
+        return f3;
+      case 1:
+        return _isPlaceholder(a) ? f3 : _curry2(function(_b, _c) {
+          return fn(a, _b, _c);
+        });
+      case 2:
+        return _isPlaceholder(a) && _isPlaceholder(b) ? f3 : _isPlaceholder(a) ? _curry2(function(_a, _c) {
+          return fn(_a, b, _c);
+        }) : _isPlaceholder(b) ? _curry2(function(_b, _c) {
+          return fn(a, _b, _c);
+        }) : _curry1(function(_c) {
+          return fn(a, b, _c);
+        });
+      default:
+        return _isPlaceholder(a) && _isPlaceholder(b) && _isPlaceholder(c) ? f3 : _isPlaceholder(a) && _isPlaceholder(b) ? _curry2(function(_a, _b) {
+          return fn(_a, _b, c);
+        }) : _isPlaceholder(a) && _isPlaceholder(c) ? _curry2(function(_a, _c) {
+          return fn(_a, b, _c);
+        }) : _isPlaceholder(b) && _isPlaceholder(c) ? _curry2(function(_b, _c) {
+          return fn(a, _b, _c);
+        }) : _isPlaceholder(a) ? _curry1(function(_a) {
+          return fn(_a, b, c);
+        }) : _isPlaceholder(b) ? _curry1(function(_b) {
+          return fn(a, _b, c);
+        }) : _isPlaceholder(c) ? _curry1(function(_c) {
+          return fn(a, b, _c);
+        }) : fn(a, b, c);
+    }
+  };
+}
 
 // node_modules/ramda/es/all.js
 init_define_process_env();
@@ -36553,6 +36587,12 @@ init_define_process_env();
 
 // node_modules/ramda/es/internal/_reduced.js
 init_define_process_env();
+function _reduced(x) {
+  return x && x["@@transducer/reduced"] ? x : {
+    "@@transducer/value": x,
+    "@@transducer/reduced": true
+  };
+}
 
 // node_modules/ramda/es/internal/_xfBase.js
 init_define_process_env();
@@ -36564,6 +36604,50 @@ var xfBase_default = {
     return this.xf["@@transducer/result"](result);
   }
 };
+
+// node_modules/ramda/es/internal/_xall.js
+var XAll = /* @__PURE__ */ function() {
+  function XAll2(f, xf) {
+    this.xf = xf;
+    this.f = f;
+    this.all = true;
+  }
+  XAll2.prototype["@@transducer/init"] = xfBase_default.init;
+  XAll2.prototype["@@transducer/result"] = function(result) {
+    if (this.all) {
+      result = this.xf["@@transducer/step"](result, true);
+    }
+    return this.xf["@@transducer/result"](result);
+  };
+  XAll2.prototype["@@transducer/step"] = function(result, input) {
+    if (!this.f(input)) {
+      this.all = false;
+      result = _reduced(this.xf["@@transducer/step"](result, false));
+    }
+    return result;
+  };
+  return XAll2;
+}();
+function _xall(f) {
+  return function(xf) {
+    return new XAll(f, xf);
+  };
+}
+
+// node_modules/ramda/es/all.js
+var all = /* @__PURE__ */ _curry2(
+  /* @__PURE__ */ _dispatchable(["all"], _xall, function all2(fn, list) {
+    var idx = 0;
+    while (idx < list.length) {
+      if (!fn(list[idx])) {
+        return false;
+      }
+      idx += 1;
+    }
+    return true;
+  })
+);
+var all_default = all;
 
 // node_modules/ramda/es/allPass.js
 init_define_process_env();
@@ -36623,8 +36707,8 @@ function _functionName(f) {
 
 // node_modules/ramda/es/internal/_has.js
 init_define_process_env();
-function _has(prop, obj) {
-  return Object.prototype.hasOwnProperty.call(obj, prop);
+function _has(prop3, obj) {
+  return Object.prototype.hasOwnProperty.call(obj, prop3);
 }
 
 // node_modules/ramda/es/internal/_objectIs.js
@@ -36678,20 +36762,20 @@ var keys = typeof Object.keys === "function" && !hasArgsEnumBug ? /* @__PURE__ *
   if (Object(obj) !== obj) {
     return [];
   }
-  var prop, nIdx;
+  var prop3, nIdx;
   var ks = [];
   var checkArgsLength = hasArgsEnumBug && isArguments_default(obj);
-  for (prop in obj) {
-    if (_has(prop, obj) && (!checkArgsLength || prop !== "length")) {
-      ks[ks.length] = prop;
+  for (prop3 in obj) {
+    if (_has(prop3, obj) && (!checkArgsLength || prop3 !== "length")) {
+      ks[ks.length] = prop3;
     }
   }
   if (hasEnumBug) {
     nIdx = nonEnumerableProps.length - 1;
     while (nIdx >= 0) {
-      prop = nonEnumerableProps[nIdx];
-      if (_has(prop, obj) && !contains(ks, prop)) {
-        ks[ks.length] = prop;
+      prop3 = nonEnumerableProps[nIdx];
+      if (_has(prop3, obj) && !contains(ks, prop3)) {
+        ks[ks.length] = prop3;
       }
       nIdx -= 1;
     }
@@ -36824,6 +36908,59 @@ var equals = /* @__PURE__ */ _curry2(function equals2(a, b) {
 });
 var equals_default = equals;
 
+// node_modules/ramda/es/internal/_indexOf.js
+function _indexOf(list, a, idx) {
+  var inf, item;
+  if (typeof list.indexOf === "function") {
+    switch (typeof a) {
+      case "number":
+        if (a === 0) {
+          inf = 1 / a;
+          while (idx < list.length) {
+            item = list[idx];
+            if (item === 0 && 1 / item === inf) {
+              return idx;
+            }
+            idx += 1;
+          }
+          return -1;
+        } else if (a !== a) {
+          while (idx < list.length) {
+            item = list[idx];
+            if (typeof item === "number" && item !== item) {
+              return idx;
+            }
+            idx += 1;
+          }
+          return -1;
+        }
+        return list.indexOf(a, idx);
+      // all these types can utilise Set
+      case "string":
+      case "boolean":
+      case "function":
+      case "undefined":
+        return list.indexOf(a, idx);
+      case "object":
+        if (a === null) {
+          return list.indexOf(a, idx);
+        }
+    }
+  }
+  while (idx < list.length) {
+    if (equals_default(list[idx], a)) {
+      return idx;
+    }
+    idx += 1;
+  }
+  return -1;
+}
+
+// node_modules/ramda/es/internal/_includes.js
+function _includes(a, list) {
+  return _indexOf(list, a, 0) >= 0;
+}
+
 // node_modules/ramda/es/internal/_map.js
 init_define_process_env();
 function _map(fn, functor) {
@@ -36839,6 +36976,10 @@ function _map(fn, functor) {
 
 // node_modules/ramda/es/internal/_quote.js
 init_define_process_env();
+function _quote(s) {
+  var escaped = s.replace(/\\/g, "\\\\").replace(/[\b]/g, "\\b").replace(/\f/g, "\\f").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/\v/g, "\\v").replace(/\0/g, "\\0");
+  return '"' + escaped.replace(/"/g, '\\"') + '"';
+}
 
 // node_modules/ramda/es/internal/_toISOString.js
 init_define_process_env();
@@ -36850,12 +36991,18 @@ var _toISOString = typeof Date.prototype.toISOString === "function" ? function _
 } : function _toISOString3(d) {
   return d.getUTCFullYear() + "-" + pad(d.getUTCMonth() + 1) + "-" + pad(d.getUTCDate()) + "T" + pad(d.getUTCHours()) + ":" + pad(d.getUTCMinutes()) + ":" + pad(d.getUTCSeconds()) + "." + (d.getUTCMilliseconds() / 1e3).toFixed(3).slice(2, 5) + "Z";
 };
+var toISOString_default = _toISOString;
 
 // node_modules/ramda/es/reject.js
 init_define_process_env();
 
 // node_modules/ramda/es/internal/_complement.js
 init_define_process_env();
+function _complement(f) {
+  return function() {
+    return !f.apply(this, arguments);
+  };
+}
 
 // node_modules/ramda/es/filter.js
 init_define_process_env();
@@ -36874,6 +37021,18 @@ function _arrayReduce(reducer2, acc, list) {
 
 // node_modules/ramda/es/internal/_filter.js
 init_define_process_env();
+function _filter(fn, list) {
+  var idx = 0;
+  var len = list.length;
+  var result = [];
+  while (idx < len) {
+    if (fn(list[idx])) {
+      result[result.length] = list[idx];
+    }
+    idx += 1;
+  }
+  return result;
+}
 
 // node_modules/ramda/es/internal/_isObject.js
 init_define_process_env();
@@ -36883,6 +37042,124 @@ function _isObject(x) {
 
 // node_modules/ramda/es/internal/_xfilter.js
 init_define_process_env();
+var XFilter = /* @__PURE__ */ function() {
+  function XFilter2(f, xf) {
+    this.xf = xf;
+    this.f = f;
+  }
+  XFilter2.prototype["@@transducer/init"] = xfBase_default.init;
+  XFilter2.prototype["@@transducer/result"] = xfBase_default.result;
+  XFilter2.prototype["@@transducer/step"] = function(result, input) {
+    return this.f(input) ? this.xf["@@transducer/step"](result, input) : result;
+  };
+  return XFilter2;
+}();
+function _xfilter(f) {
+  return function(xf) {
+    return new XFilter(f, xf);
+  };
+}
+
+// node_modules/ramda/es/filter.js
+var filter = /* @__PURE__ */ _curry2(
+  /* @__PURE__ */ _dispatchable(["fantasy-land/filter", "filter"], _xfilter, function(pred, filterable) {
+    return _isObject(filterable) ? _arrayReduce(function(acc, key) {
+      if (pred(filterable[key])) {
+        acc[key] = filterable[key];
+      }
+      return acc;
+    }, {}, keys_default(filterable)) : (
+      // else
+      _filter(pred, filterable)
+    );
+  })
+);
+var filter_default = filter;
+
+// node_modules/ramda/es/reject.js
+var reject = /* @__PURE__ */ _curry2(function reject2(pred, filterable) {
+  return filter_default(_complement(pred), filterable);
+});
+var reject_default = reject;
+
+// node_modules/ramda/es/internal/_toString.js
+function _toString(x, seen) {
+  var recur = function recur2(y) {
+    var xs = seen.concat([x]);
+    return _includes(y, xs) ? "<Circular>" : _toString(y, xs);
+  };
+  var mapPairs = function(obj, keys4) {
+    return _map(function(k) {
+      return _quote(k) + ": " + recur(obj[k]);
+    }, keys4.slice().sort());
+  };
+  switch (Object.prototype.toString.call(x)) {
+    case "[object Arguments]":
+      return "(function() { return arguments; }(" + _map(recur, x).join(", ") + "))";
+    case "[object Array]":
+      return "[" + _map(recur, x).concat(mapPairs(x, reject_default(function(k) {
+        return /^\d+$/.test(k);
+      }, keys_default(x)))).join(", ") + "]";
+    case "[object Boolean]":
+      return typeof x === "object" ? "new Boolean(" + recur(x.valueOf()) + ")" : x.toString();
+    case "[object Date]":
+      return "new Date(" + (isNaN(x.valueOf()) ? recur(NaN) : _quote(toISOString_default(x))) + ")";
+    case "[object Map]":
+      return "new Map(" + recur(Array.from(x)) + ")";
+    case "[object Null]":
+      return "null";
+    case "[object Number]":
+      return typeof x === "object" ? "new Number(" + recur(x.valueOf()) + ")" : 1 / x === -Infinity ? "-0" : x.toString(10);
+    case "[object Set]":
+      return "new Set(" + recur(Array.from(x).sort()) + ")";
+    case "[object String]":
+      return typeof x === "object" ? "new String(" + recur(x.valueOf()) + ")" : _quote(x);
+    case "[object Undefined]":
+      return "undefined";
+    default:
+      if (typeof x.toString === "function") {
+        var repr = x.toString();
+        if (repr !== "[object Object]") {
+          return repr;
+        }
+      }
+      return "{" + mapPairs(x, keys_default(x)).join(", ") + "}";
+  }
+}
+
+// node_modules/ramda/es/toString.js
+var toString2 = /* @__PURE__ */ _curry1(function toString3(val) {
+  return _toString(val, []);
+});
+var toString_default = toString2;
+
+// node_modules/ramda/es/max.js
+var max = /* @__PURE__ */ _curry2(function max2(a, b) {
+  if (a === b) {
+    return b;
+  }
+  function safeMax(x, y) {
+    if (x > y !== y > x) {
+      return y > x ? y : x;
+    }
+    return void 0;
+  }
+  var maxByValue = safeMax(a, b);
+  if (maxByValue !== void 0) {
+    return maxByValue;
+  }
+  var maxByType = safeMax(typeof a, typeof b);
+  if (maxByType !== void 0) {
+    return maxByType === typeof a ? a : b;
+  }
+  var stringA = toString_default(a);
+  var maxByStringValue = safeMax(stringA, toString_default(b));
+  if (maxByStringValue !== void 0) {
+    return maxByStringValue === stringA ? a : b;
+  }
+  return b;
+});
+var max_default = max;
 
 // node_modules/ramda/es/pluck.js
 init_define_process_env();
@@ -36949,6 +37226,28 @@ function _isString(x) {
   return Object.prototype.toString.call(x) === "[object String]";
 }
 
+// node_modules/ramda/es/nth.js
+var nth = /* @__PURE__ */ _curry2(function nth2(offset4, list) {
+  var idx = offset4 < 0 ? list.length + offset4 : offset4;
+  return _isString(list) ? list.charAt(idx) : list[idx];
+});
+var nth_default = nth;
+
+// node_modules/ramda/es/prop.js
+var prop = /* @__PURE__ */ _curry2(function prop2(p, obj) {
+  if (obj == null) {
+    return;
+  }
+  return isInteger_default(p) ? nth_default(p, obj) : obj[p];
+});
+var prop_default = prop;
+
+// node_modules/ramda/es/pluck.js
+var pluck = /* @__PURE__ */ _curry2(function pluck2(p, list) {
+  return map_default(prop_default(p), list);
+});
+var pluck_default = pluck;
+
 // node_modules/ramda/es/reduce.js
 init_define_process_env();
 
@@ -37011,12 +37310,74 @@ function _createReduce(arrayReduce, methodReduce, iterableReduce) {
 
 // node_modules/ramda/es/internal/_xArrayReduce.js
 init_define_process_env();
+function _xArrayReduce(xf, acc, list) {
+  var idx = 0;
+  var len = list.length;
+  while (idx < len) {
+    acc = xf["@@transducer/step"](acc, list[idx]);
+    if (acc && acc["@@transducer/reduced"]) {
+      acc = acc["@@transducer/value"];
+      break;
+    }
+    idx += 1;
+  }
+  return xf["@@transducer/result"](acc);
+}
 
 // node_modules/ramda/es/bind.js
 init_define_process_env();
+var bind = /* @__PURE__ */ _curry2(function bind2(fn, thisObj) {
+  return _arity(fn.length, function() {
+    return fn.apply(thisObj, arguments);
+  });
+});
+var bind_default = bind;
+
+// node_modules/ramda/es/internal/_xReduce.js
+function _xIterableReduce(xf, acc, iter) {
+  var step = iter.next();
+  while (!step.done) {
+    acc = xf["@@transducer/step"](acc, step.value);
+    if (acc && acc["@@transducer/reduced"]) {
+      acc = acc["@@transducer/value"];
+      break;
+    }
+    step = iter.next();
+  }
+  return xf["@@transducer/result"](acc);
+}
+function _xMethodReduce(xf, acc, obj, methodName) {
+  return xf["@@transducer/result"](obj[methodName](bind_default(xf["@@transducer/step"], xf), acc));
+}
+var _xReduce = /* @__PURE__ */ _createReduce(_xArrayReduce, _xMethodReduce, _xIterableReduce);
+var xReduce_default = _xReduce;
 
 // node_modules/ramda/es/internal/_xwrap.js
 init_define_process_env();
+var XWrap = /* @__PURE__ */ function() {
+  function XWrap2(fn) {
+    this.f = fn;
+  }
+  XWrap2.prototype["@@transducer/init"] = function() {
+    throw new Error("init not implemented on XWrap");
+  };
+  XWrap2.prototype["@@transducer/result"] = function(acc) {
+    return acc;
+  };
+  XWrap2.prototype["@@transducer/step"] = function(acc, x) {
+    return this.f(acc, x);
+  };
+  return XWrap2;
+}();
+function _xwrap(fn) {
+  return new XWrap(fn);
+}
+
+// node_modules/ramda/es/reduce.js
+var reduce = /* @__PURE__ */ _curry3(function(xf, acc, list) {
+  return xReduce_default(typeof xf === "function" ? _xwrap(xf) : xf, acc, list);
+});
+var reduce_default = reduce;
 
 // node_modules/ramda/es/always.js
 init_define_process_env();
@@ -37190,18 +37551,68 @@ init_define_process_env();
 
 // node_modules/ramda/es/internal/_pipe.js
 init_define_process_env();
+function _pipe(f, g) {
+  return function() {
+    return g.call(this, f.apply(this, arguments));
+  };
+}
 
 // node_modules/ramda/es/tail.js
 init_define_process_env();
 
 // node_modules/ramda/es/internal/_checkForMethod.js
 init_define_process_env();
+function _checkForMethod(methodname, fn) {
+  return function() {
+    var length2 = arguments.length;
+    if (length2 === 0) {
+      return fn();
+    }
+    var obj = arguments[length2 - 1];
+    return isArray_default(obj) || typeof obj[methodname] !== "function" ? fn.apply(this, arguments) : obj[methodname].apply(obj, Array.prototype.slice.call(arguments, 0, length2 - 1));
+  };
+}
 
 // node_modules/ramda/es/slice.js
 init_define_process_env();
+var slice = /* @__PURE__ */ _curry3(
+  /* @__PURE__ */ _checkForMethod("slice", function slice2(fromIndex, toIndex, list) {
+    return Array.prototype.slice.call(list, fromIndex, toIndex);
+  })
+);
+var slice_default = slice;
+
+// node_modules/ramda/es/tail.js
+var tail = /* @__PURE__ */ _curry1(
+  /* @__PURE__ */ _checkForMethod(
+    "tail",
+    /* @__PURE__ */ slice_default(1, Infinity)
+  )
+);
+var tail_default = tail;
+
+// node_modules/ramda/es/pipe.js
+function pipe() {
+  if (arguments.length === 0) {
+    throw new Error("pipe requires at least one argument");
+  }
+  return _arity(arguments[0].length, reduce_default(_pipe, arguments[0], tail_default(arguments)));
+}
 
 // node_modules/ramda/es/reverse.js
 init_define_process_env();
+var reverse = /* @__PURE__ */ _curry1(function reverse2(list) {
+  return _isString(list) ? list.split("").reverse().join("") : Array.prototype.slice.call(list, 0).reverse();
+});
+var reverse_default = reverse;
+
+// node_modules/ramda/es/compose.js
+function compose() {
+  if (arguments.length === 0) {
+    throw new Error("compose requires at least one argument");
+  }
+  return pipe.apply(this, reverse_default(arguments));
+}
 
 // node_modules/ramda/es/composeWith.js
 init_define_process_env();
@@ -37211,6 +37622,8 @@ init_define_process_env();
 
 // node_modules/ramda/es/head.js
 init_define_process_env();
+var head = /* @__PURE__ */ nth_default(0);
+var head_default = head;
 
 // node_modules/ramda/es/identity.js
 init_define_process_env();
@@ -37235,6 +37648,16 @@ init_define_process_env();
 
 // node_modules/ramda/es/converge.js
 init_define_process_env();
+var converge = /* @__PURE__ */ _curry2(function converge2(after, fns) {
+  return curryN_default(reduce_default(max_default, 0, pluck_default("length", fns)), function() {
+    var args = arguments;
+    var context2 = this;
+    return after.apply(context2, _map(function(fn) {
+      return fn.apply(context2, args);
+    }, fns));
+  });
+});
+var converge_default = converge;
 
 // node_modules/ramda/es/count.js
 init_define_process_env();
@@ -37508,6 +37931,16 @@ init_define_process_env();
 
 // node_modules/ramda/es/invoker.js
 init_define_process_env();
+var invoker = /* @__PURE__ */ _curry2(function invoker2(arity, method) {
+  return curryN_default(arity + 1, function() {
+    var target = arguments[arity];
+    if (target != null && _isFunction(target[method])) {
+      return target[method].apply(target, Array.prototype.slice.call(arguments, 0, arity));
+    }
+    throw new TypeError(toString_default(target) + ' does not have a method named "' + method + '"');
+  });
+});
+var invoker_default = invoker;
 
 // node_modules/ramda/es/is.js
 init_define_process_env();
@@ -37524,9 +37957,17 @@ init_define_process_env();
 
 // node_modules/ramda/es/join.js
 init_define_process_env();
+var join = /* @__PURE__ */ invoker_default(1, "join");
+var join_default = join;
 
 // node_modules/ramda/es/juxt.js
 init_define_process_env();
+var juxt = /* @__PURE__ */ _curry1(function juxt2(fns) {
+  return converge_default(function() {
+    return Array.prototype.slice.call(arguments, 0);
+  }, fns);
+});
+var juxt_default = juxt;
 
 // node_modules/ramda/es/keysIn.js
 init_define_process_env();
@@ -37860,6 +38301,8 @@ init_define_process_env();
 
 // node_modules/ramda/es/toUpper.js
 init_define_process_env();
+var toUpper = /* @__PURE__ */ invoker_default(0, "toUpperCase");
+var toUpper_default = toUpper;
 
 // node_modules/ramda/es/transduce.js
 init_define_process_env();
@@ -39632,10 +40075,10 @@ if (typeof forwardRef$1 === "undefined") {
   forwardRef$1 = forwardRefShim$1;
 }
 function joinClassnames() {
-  for (var _len = arguments.length, classnames6 = new Array(_len), _key = 0; _key < _len; _key++) {
-    classnames6[_key] = arguments[_key];
+  for (var _len = arguments.length, classnames7 = new Array(_len), _key = 0; _key < _len; _key++) {
+    classnames7[_key] = arguments[_key];
   }
-  return classnames6.filter(function(i) {
+  return classnames7.filter(function(i) {
     return i;
   }).join(" ");
 }
@@ -40751,17 +41194,17 @@ init_define_process_env();
 
 // node_modules/axios/lib/helpers/bind.js
 init_define_process_env();
-function bind(fn, thisArg) {
+function bind3(fn, thisArg) {
   return function wrap() {
     return fn.apply(thisArg, arguments);
   };
 }
 
 // node_modules/axios/lib/utils.js
-var { toString: toString2 } = Object.prototype;
+var { toString: toString4 } = Object.prototype;
 var { getPrototypeOf } = Object;
 var kindOf = /* @__PURE__ */ ((cache2) => (thing) => {
-  const str = toString2.call(thing);
+  const str = toString4.call(thing);
   return cache2[str] || (cache2[str] = str.slice(8, -1).toLowerCase());
 })(/* @__PURE__ */ Object.create(null));
 var kindOfTest = (type3) => {
@@ -40873,7 +41316,7 @@ function merge() {
 var extend = (a, b, thisArg, { allOwnKeys } = {}) => {
   forEach(b, (val, key) => {
     if (thisArg && isFunction(val)) {
-      a[key] = bind(val, thisArg);
+      a[key] = bind3(val, thisArg);
     } else {
       a[key] = val;
     }
@@ -40894,10 +41337,10 @@ var inherits = (constructor2, superConstructor, props, descriptors2) => {
   });
   props && Object.assign(constructor2.prototype, props);
 };
-var toFlatObject = (sourceObj, destObj, filter2, propFilter) => {
+var toFlatObject = (sourceObj, destObj, filter3, propFilter) => {
   let props;
   let i;
-  let prop;
+  let prop3;
   const merged = {};
   destObj = destObj || {};
   if (sourceObj == null) return destObj;
@@ -40905,14 +41348,14 @@ var toFlatObject = (sourceObj, destObj, filter2, propFilter) => {
     props = Object.getOwnPropertyNames(sourceObj);
     i = props.length;
     while (i-- > 0) {
-      prop = props[i];
-      if ((!propFilter || propFilter(prop, sourceObj, destObj)) && !merged[prop]) {
-        destObj[prop] = sourceObj[prop];
-        merged[prop] = true;
+      prop3 = props[i];
+      if ((!propFilter || propFilter(prop3, sourceObj, destObj)) && !merged[prop3]) {
+        destObj[prop3] = sourceObj[prop3];
+        merged[prop3] = true;
       }
     }
-    sourceObj = filter2 !== false && getPrototypeOf(sourceObj);
-  } while (sourceObj && (!filter2 || filter2(sourceObj, destObj)) && sourceObj !== Object.prototype);
+    sourceObj = filter3 !== false && getPrototypeOf(sourceObj);
+  } while (sourceObj && (!filter3 || filter3(sourceObj, destObj)) && sourceObj !== Object.prototype);
   return destObj;
 };
 var endsWith = (str, searchString, position2) => {
@@ -40966,7 +41409,7 @@ var toCamelCase = (str) => {
     }
   );
 };
-var hasOwnProperty = (({ hasOwnProperty: hasOwnProperty2 }) => (obj, prop) => hasOwnProperty2.call(obj, prop))(Object.prototype);
+var hasOwnProperty = (({ hasOwnProperty: hasOwnProperty2 }) => (obj, prop3) => hasOwnProperty2.call(obj, prop3))(Object.prototype);
 var isRegExp = kindOfTest("RegExp");
 var reduceDescriptors = (obj, reducer2) => {
   const descriptors2 = Object.getOwnPropertyDescriptors(obj);
@@ -41211,10 +41654,10 @@ Object.defineProperties(AxiosError, descriptors);
 Object.defineProperty(prototype, "isAxiosError", { value: true });
 AxiosError.from = (error2, code, config, request, response, customProps) => {
   const axiosError = Object.create(prototype);
-  utils_default.toFlatObject(error2, axiosError, function filter2(obj) {
+  utils_default.toFlatObject(error2, axiosError, function filter3(obj) {
     return obj !== Error.prototype;
-  }, (prop) => {
-    return prop !== "isAxiosError";
+  }, (prop3) => {
+    return prop3 !== "isAxiosError";
   });
   AxiosError.call(axiosError, error2.message, code, config, request, response);
   axiosError.cause = error2;
@@ -41245,8 +41688,8 @@ function renderKey(path, key, dots) {
 function isFlatArray(arr) {
   return utils_default.isArray(arr) && !arr.some(isVisitable);
 }
-var predicates = utils_default.toFlatObject(utils_default, {}, null, function filter(prop) {
-  return /^is[A-Z]/.test(prop);
+var predicates = utils_default.toFlatObject(utils_default, {}, null, function filter2(prop3) {
+  return /^is[A-Z]/.test(prop3);
 });
 function toFormData(obj, formData, options2) {
   if (!utils_default.isObject(obj)) {
@@ -41363,7 +41806,7 @@ var prototype2 = AxiosURLSearchParams.prototype;
 prototype2.append = function append(name, value) {
   this._pairs.push([name, value]);
 };
-prototype2.toString = function toString3(encoder) {
+prototype2.toString = function toString5(encoder) {
   const _encode = encoder ? function(value) {
     return encoder.call(this, value, encode);
   } : encode;
@@ -41784,19 +42227,19 @@ function parseTokens(str) {
   return tokens;
 }
 var isValidHeaderName = (str) => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(str.trim());
-function matchHeaderValue(context2, value, header, filter2, isHeaderNameFilter) {
-  if (utils_default.isFunction(filter2)) {
-    return filter2.call(this, value, header);
+function matchHeaderValue(context2, value, header, filter3, isHeaderNameFilter) {
+  if (utils_default.isFunction(filter3)) {
+    return filter3.call(this, value, header);
   }
   if (isHeaderNameFilter) {
     value = header;
   }
   if (!utils_default.isString(value)) return;
-  if (utils_default.isString(filter2)) {
-    return value.indexOf(filter2) !== -1;
+  if (utils_default.isString(filter3)) {
+    return value.indexOf(filter3) !== -1;
   }
-  if (utils_default.isRegExp(filter2)) {
-    return filter2.test(value);
+  if (utils_default.isRegExp(filter3)) {
+    return filter3.test(value);
   }
 }
 function formatHeader(header) {
@@ -42022,12 +42465,12 @@ init_define_process_env();
 
 // node_modules/axios/lib/core/settle.js
 init_define_process_env();
-function settle(resolve, reject, response) {
+function settle(resolve, reject3, response) {
   const validateStatus2 = response.config.validateStatus;
   if (!response.status || !validateStatus2 || validateStatus2(response.status)) {
     resolve(response);
   } else {
-    reject(new AxiosError_default(
+    reject3(new AxiosError_default(
       "Request failed with status code " + response.status,
       [AxiosError_default.ERR_BAD_REQUEST, AxiosError_default.ERR_BAD_RESPONSE][Math.floor(response.status / 100) - 4],
       response.config,
@@ -42053,27 +42496,27 @@ function speedometer(samplesCount, min2) {
   samplesCount = samplesCount || 10;
   const bytes = new Array(samplesCount);
   const timestamps = new Array(samplesCount);
-  let head = 0;
-  let tail = 0;
+  let head2 = 0;
+  let tail2 = 0;
   let firstSampleTS;
   min2 = min2 !== void 0 ? min2 : 1e3;
   return function push(chunkLength) {
     const now = Date.now();
-    const startedAt = timestamps[tail];
+    const startedAt = timestamps[tail2];
     if (!firstSampleTS) {
       firstSampleTS = now;
     }
-    bytes[head] = chunkLength;
-    timestamps[head] = now;
-    let i = tail;
+    bytes[head2] = chunkLength;
+    timestamps[head2] = now;
+    let i = tail2;
     let bytesCount = 0;
-    while (i !== head) {
+    while (i !== head2) {
       bytesCount += bytes[i++];
       i = i % samplesCount;
     }
-    head = (head + 1) % samplesCount;
-    if (head === tail) {
-      tail = (tail + 1) % samplesCount;
+    head2 = (head2 + 1) % samplesCount;
+    if (head2 === tail2) {
+      tail2 = (tail2 + 1) % samplesCount;
     }
     if (now - firstSampleTS < min2) {
       return;
@@ -42292,10 +42735,10 @@ function mergeConfig(config1, config2) {
       return getMergedValue(void 0, a);
     }
   }
-  function mergeDirectKeys(a, b, prop) {
-    if (prop in config2) {
+  function mergeDirectKeys(a, b, prop3) {
+    if (prop3 in config2) {
       return getMergedValue(a, b);
-    } else if (prop in config1) {
+    } else if (prop3 in config1) {
       return getMergedValue(void 0, a);
     }
   }
@@ -42330,10 +42773,10 @@ function mergeConfig(config1, config2) {
     validateStatus: mergeDirectKeys,
     headers: (a, b) => mergeDeepProperties(headersToObject(a), headersToObject(b), true)
   };
-  utils_default.forEach(Object.keys(Object.assign({}, config1, config2)), function computeConfigValue(prop) {
-    const merge2 = mergeMap[prop] || mergeDeepProperties;
-    const configValue = merge2(config1[prop], config2[prop], prop);
-    utils_default.isUndefined(configValue) && merge2 !== mergeDirectKeys || (config[prop] = configValue);
+  utils_default.forEach(Object.keys(Object.assign({}, config1, config2)), function computeConfigValue(prop3) {
+    const merge2 = mergeMap[prop3] || mergeDeepProperties;
+    const configValue = merge2(config1[prop3], config2[prop3], prop3);
+    utils_default.isUndefined(configValue) && merge2 !== mergeDirectKeys || (config[prop3] = configValue);
   });
   return config;
 }
@@ -42374,7 +42817,7 @@ var resolveConfig_default = (config) => {
 // node_modules/axios/lib/adapters/xhr.js
 var isXHRAdapterSupported = typeof XMLHttpRequest !== "undefined";
 var xhr_default = isXHRAdapterSupported && function(config) {
-  return new Promise(function dispatchXhrRequest(resolve, reject) {
+  return new Promise(function dispatchXhrRequest(resolve, reject3) {
     const _config = resolveConfig_default(config);
     let requestData = _config.data;
     const requestHeaders = AxiosHeaders_default.from(_config.headers).normalize();
@@ -42411,7 +42854,7 @@ var xhr_default = isXHRAdapterSupported && function(config) {
         resolve(value);
         done();
       }, function _reject(err) {
-        reject(err);
+        reject3(err);
         done();
       }, response);
       request = null;
@@ -42433,11 +42876,11 @@ var xhr_default = isXHRAdapterSupported && function(config) {
       if (!request) {
         return;
       }
-      reject(new AxiosError_default("Request aborted", AxiosError_default.ECONNABORTED, config, request));
+      reject3(new AxiosError_default("Request aborted", AxiosError_default.ECONNABORTED, config, request));
       request = null;
     };
     request.onerror = function handleError() {
-      reject(new AxiosError_default("Network Error", AxiosError_default.ERR_NETWORK, config, request));
+      reject3(new AxiosError_default("Network Error", AxiosError_default.ERR_NETWORK, config, request));
       request = null;
     };
     request.ontimeout = function handleTimeout() {
@@ -42446,7 +42889,7 @@ var xhr_default = isXHRAdapterSupported && function(config) {
       if (_config.timeoutErrorMessage) {
         timeoutErrorMessage = _config.timeoutErrorMessage;
       }
-      reject(new AxiosError_default(
+      reject3(new AxiosError_default(
         timeoutErrorMessage,
         transitional2.clarifyTimeoutError ? AxiosError_default.ETIMEDOUT : AxiosError_default.ECONNABORTED,
         config,
@@ -42480,7 +42923,7 @@ var xhr_default = isXHRAdapterSupported && function(config) {
         if (!request) {
           return;
         }
-        reject(!cancel || cancel.type ? new CanceledError_default(null, config, request) : cancel);
+        reject3(!cancel || cancel.type ? new CanceledError_default(null, config, request) : cancel);
         request.abort();
         request = null;
       };
@@ -42491,7 +42934,7 @@ var xhr_default = isXHRAdapterSupported && function(config) {
     }
     const protocol = parseProtocol(_config.url);
     if (protocol && platform_default.protocols.indexOf(protocol) === -1) {
-      reject(new AxiosError_default("Unsupported protocol " + protocol + ":", AxiosError_default.ERR_BAD_REQUEST, config));
+      reject3(new AxiosError_default("Unsupported protocol " + protocol + ":", AxiosError_default.ERR_BAD_REQUEST, config));
       return;
     }
     request.send(requestData || null);
@@ -42737,8 +43180,8 @@ var fetch_default = isFetchSupported && (async (config) => {
     const isStreamResponse = supportsResponseStream && (responseType === "stream" || responseType === "response");
     if (supportsResponseStream && (onDownloadProgress || isStreamResponse && unsubscribe)) {
       const options2 = {};
-      ["status", "statusText", "headers"].forEach((prop) => {
-        options2[prop] = response[prop];
+      ["status", "statusText", "headers"].forEach((prop3) => {
+        options2[prop3] = response[prop3];
       });
       const responseContentLength = utils_default.toFiniteNumber(response.headers.get("content-length"));
       const [onProgress, flush] = onDownloadProgress && progressEventDecorator(
@@ -42756,8 +43199,8 @@ var fetch_default = isFetchSupported && (async (config) => {
     responseType = responseType || "text";
     let responseData = await resolvers[utils_default.findKey(resolvers, responseType) || "text"](response, config);
     !isStreamResponse && unsubscribe && unsubscribe();
-    return await new Promise((resolve, reject) => {
-      settle(resolve, reject, {
+    return await new Promise((resolve, reject3) => {
+      settle(resolve, reject3, {
         data: responseData,
         headers: AxiosHeaders_default.from(response.headers),
         status: response.status,
@@ -43133,7 +43576,7 @@ var CancelToken = class _CancelToken {
         token2.subscribe(resolve);
         _resolve = resolve;
       }).then(onfulfilled);
-      promise.cancel = function reject() {
+      promise.cancel = function reject3() {
         token2.unsubscribe(_resolve);
       };
       return promise;
@@ -43295,10 +43738,10 @@ var HttpStatusCode_default = HttpStatusCode;
 // node_modules/axios/lib/axios.js
 function createInstance(defaultConfig) {
   const context2 = new Axios_default(defaultConfig);
-  const instance = bind(Axios_default.prototype.request, context2);
+  const instance = bind3(Axios_default.prototype.request, context2);
   utils_default.extend(instance, Axios_default.prototype, context2, { allOwnKeys: true });
   utils_default.extend(instance, context2, null, { allOwnKeys: true });
-  instance.create = function create2(instanceConfig) {
+  instance.create = function create3(instanceConfig) {
     return createInstance(mergeConfig(defaultConfig, instanceConfig));
   };
   return instance;
@@ -43312,7 +43755,7 @@ axios.VERSION = VERSION;
 axios.toFormData = toFormData_default;
 axios.AxiosError = AxiosError_default;
 axios.Cancel = axios.CanceledError;
-axios.all = function all(promises) {
+axios.all = function all3(promises) {
   return Promise.all(promises);
 };
 axios.spread = spread;
@@ -43333,7 +43776,7 @@ var {
   isCancel: isCancel2,
   CancelToken: CancelToken2,
   VERSION: VERSION2,
-  all: all2,
+  all: all4,
   Cancel,
   isAxiosError: isAxiosError2,
   spread: spread2,
@@ -43973,7 +44416,7 @@ function isTypeableElement(element) {
 // node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
 init_define_process_env();
 var min = Math.min;
-var max = Math.max;
+var max3 = Math.max;
 var round = Math.round;
 var floor = Math.floor;
 var createCoords = (v) => ({
@@ -43991,7 +44434,7 @@ var oppositeAlignmentMap = {
   end: "start"
 };
 function clamp2(start, value, end) {
-  return max(start, min(value, end));
+  return max3(start, min(value, end));
 }
 function evaluate(value, param) {
   return typeof value === "function" ? value(param) : value;
@@ -44129,7 +44572,7 @@ var isContentEditable = function isContentEditable2(node2) {
   var attValue = node2 === null || node2 === void 0 ? void 0 : (_node$getAttribute2 = node2.getAttribute) === null || _node$getAttribute2 === void 0 ? void 0 : _node$getAttribute2.call(node2, "contenteditable");
   return attValue === "" || attValue === "true";
 };
-var getCandidates = function getCandidates2(el, includeContainer, filter2) {
+var getCandidates = function getCandidates2(el, includeContainer, filter3) {
   if (isInert(el)) {
     return [];
   }
@@ -44137,7 +44580,7 @@ var getCandidates = function getCandidates2(el, includeContainer, filter2) {
   if (includeContainer && matches.call(el, candidateSelector)) {
     candidates.unshift(el);
   }
-  candidates = candidates.filter(filter2);
+  candidates = candidates.filter(filter3);
   return candidates;
 };
 var getCandidatesIteratively = function getCandidatesIteratively2(elements, includeContainer, options2) {
@@ -44647,11 +45090,11 @@ var arrow = (options2) => ({
     const minPadding = min(paddingObject[minProp], largestPossiblePadding);
     const maxPadding = min(paddingObject[maxProp], largestPossiblePadding);
     const min$1 = minPadding;
-    const max2 = clientSize - arrowDimensions[length2] - maxPadding;
+    const max4 = clientSize - arrowDimensions[length2] - maxPadding;
     const center = clientSize / 2 - arrowDimensions[length2] / 2 + centerToReference;
-    const offset4 = clamp2(min$1, center, max2);
+    const offset4 = clamp2(min$1, center, max4);
     const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center !== offset4 && rects.reference[length2] / 2 - (center < min$1 ? minPadding : maxPadding) - arrowDimensions[length2] / 2 < 0;
-    const alignmentOffset = shouldAddOffset ? center < min$1 ? center - min$1 : center - max2 : 0;
+    const alignmentOffset = shouldAddOffset ? center < min$1 ? center - min$1 : center - max4 : 0;
     return {
       [axis]: coords[axis] + alignmentOffset,
       data: {
@@ -44879,15 +45322,15 @@ var shift = function(options2) {
         const minSide = mainAxis === "y" ? "top" : "left";
         const maxSide = mainAxis === "y" ? "bottom" : "right";
         const min2 = mainAxisCoord + overflow[minSide];
-        const max2 = mainAxisCoord - overflow[maxSide];
-        mainAxisCoord = clamp2(min2, mainAxisCoord, max2);
+        const max4 = mainAxisCoord - overflow[maxSide];
+        mainAxisCoord = clamp2(min2, mainAxisCoord, max4);
       }
       if (checkCrossAxis) {
         const minSide = crossAxis === "y" ? "top" : "left";
         const maxSide = crossAxis === "y" ? "bottom" : "right";
         const min2 = crossAxisCoord + overflow[minSide];
-        const max2 = crossAxisCoord - overflow[maxSide];
-        crossAxisCoord = clamp2(min2, crossAxisCoord, max2);
+        const max4 = crossAxisCoord - overflow[maxSide];
+        crossAxisCoord = clamp2(min2, crossAxisCoord, max4);
       }
       const limitedCoords = limiter.fn({
         ...state,
@@ -45095,12 +45538,12 @@ function getDocumentRect(element) {
   const html = getDocumentElement(element);
   const scroll = getNodeScroll(element);
   const body = element.ownerDocument.body;
-  const width = max(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
-  const height = max(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
+  const width = max3(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
+  const height = max3(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
   let x = -scroll.scrollLeft + getWindowScrollBarX(element);
   const y = -scroll.scrollTop;
   if (getComputedStyle2(body).direction === "rtl") {
-    x += max(html.clientWidth, body.clientWidth) - width;
+    x += max3(html.clientWidth, body.clientWidth) - width;
   }
   return {
     width,
@@ -45213,10 +45656,10 @@ function getClippingRect(_ref3) {
   const firstClippingAncestor = clippingAncestors[0];
   const clippingRect = clippingAncestors.reduce((accRect, clippingAncestor) => {
     const rect = getClientRectFromClippingAncestor(element, clippingAncestor, strategy);
-    accRect.top = max(rect.top, accRect.top);
+    accRect.top = max3(rect.top, accRect.top);
     accRect.right = min(rect.right, accRect.right);
     accRect.bottom = min(rect.bottom, accRect.bottom);
-    accRect.left = max(rect.left, accRect.left);
+    accRect.left = max3(rect.left, accRect.left);
     return accRect;
   }, getClientRectFromClippingAncestor(element, firstClippingAncestor, strategy));
   return {
@@ -45378,7 +45821,7 @@ function observeMove(element, onMove) {
     const rootMargin = -insetTop + "px " + -insetRight + "px " + -insetBottom + "px " + -insetLeft + "px";
     const options2 = {
       rootMargin,
-      threshold: max(0, min(1, threshold)) || 1
+      threshold: max3(0, min(1, threshold)) || 1
     };
     let isFirstUpdate = true;
     function handleObserve(entries) {
@@ -45998,14 +46441,14 @@ function useLatestRef2(value) {
   return ref;
 }
 var safePolygonIdentifier = /* @__PURE__ */ createAttribute("safe-polygon");
-function getDelay(value, prop, pointerType) {
+function getDelay(value, prop3, pointerType) {
   if (pointerType && !isMouseLikePointerType(pointerType)) {
     return 0;
   }
   if (typeof value === "number") {
     return value;
   }
-  return value == null ? void 0 : value[prop];
+  return value == null ? void 0 : value[prop3];
 }
 function useHover(context2, props) {
   if (props === void 0) {
@@ -47500,10 +47943,16 @@ var show = (slug) => axios_default.get(`/tasks/${slug}`);
 var create = (payload) => axios_default.post("/tasks/", {
   task: payload
 });
-var update = ({ slug, payload }) => axios_default.put(`/tasks/${slug}`, {
-  task: payload
-});
-var destroy = (slug) => axios_default.delete(`/tasks/${slug}`);
+var update = ({ slug, payload, quiet = false }) => {
+  const path = quiet ? `/tasks/${slug}?quiet` : `/tasks/${slug}`;
+  return axios_default.put(path, {
+    task: payload
+  });
+};
+var destroy = ({ slug, quiet }) => {
+  const path = quiet ? `/tasks/${slug}?quiet` : `/tasks/${slug}`;
+  return axios_default.delete(path);
+};
 var tasksApi = {
   fetch: fetch2,
   show,
@@ -47520,57 +47969,139 @@ var import_react24 = __toESM(require_react());
 // app/javascript/src/components/Tasks/Table/Header.jsx
 init_define_process_env();
 var import_react22 = __toESM(require_react());
-var Header = () => /* @__PURE__ */ import_react22.default.createElement("thead", null, /* @__PURE__ */ import_react22.default.createElement("tr", null, /* @__PURE__ */ import_react22.default.createElement("th", { className: "border-b border-r border-gray-300 bg-gray-100 px-4 py-2.5 text-left text-xs font-bold uppercase leading-4 text-gray-800" }, "Tasks"), /* @__PURE__ */ import_react22.default.createElement("th", { className: "border-b border-r border-gray-300 bg-gray-100 px-4 py-2.5 text-left text-xs font-bold uppercase leading-4 text-gray-800" }, "Assigned To")));
+var Header = ({ type: type3 }) => {
+  const getTitleCase = compose(join_default(""), juxt_default([compose(toUpper_default, head_default), tail_default]));
+  const title = `${getTitleCase(type3)} Tasks`;
+  return /* @__PURE__ */ import_react22.default.createElement("thead", null, /* @__PURE__ */ import_react22.default.createElement("tr", null, /* @__PURE__ */ import_react22.default.createElement("th", { className: "w-1 border-b border-r border-gray-300 bg-gray-100" }), /* @__PURE__ */ import_react22.default.createElement("th", { className: "border-b border-r border-gray-300 bg-gray-100 px-4 py-2.5 text-left text-xs font-bold uppercase leading-4 text-gray-800" }, title), type3 === "pending" && /* @__PURE__ */ import_react22.default.createElement("th", { className: "border-b border-r border-gray-300 bg-gray-100 px-4 py-2.5 text-left text-xs font-bold uppercase leading-4 text-gray-800" }, "Assigned To"), type3 === "completed" && /* @__PURE__ */ import_react22.default.createElement("th", { className: "border-b border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-xs font-bold uppercase leading-4 text-gray-800" }, "Actions"), type3 === "pending" && /* @__PURE__ */ import_react22.default.createElement("th", { className: "border-b border-r border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-xs font-bold uppercase leading-4 text-gray-800" }, "Comments"), type3 === "pending" && /* @__PURE__ */ import_react22.default.createElement("th", { className: "border-b border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-xs font-bold uppercase leading-4 text-gray-800" }, "Starred")));
+};
 var Header_default = Header;
 
 // app/javascript/src/components/Tasks/Table/Row.jsx
 init_define_process_env();
 var import_react23 = __toESM(require_react());
+var import_classnames6 = __toESM(require_classnames());
 var import_prop_types8 = __toESM(require_prop_types());
-var Row = ({ data, showTask, destroyTask }) => /* @__PURE__ */ import_react23.default.createElement("tbody", { className: "divide-y divide-gray-200 bg-white" }, data.map((rowData) => /* @__PURE__ */ import_react23.default.createElement("tr", { key: rowData.id }, /* @__PURE__ */ import_react23.default.createElement("td", { className: "space-x-5 border-r border-gray-300 px-4 py-2.5 text-sm font-medium capitalize" }, /* @__PURE__ */ import_react23.default.createElement(Tooltip_default, { tooltipContent: rowData.title }, /* @__PURE__ */ import_react23.default.createElement("span", null, rowData.title))), /* @__PURE__ */ import_react23.default.createElement("td", { className: "whitespace-no-wrap border-r border-gray-300 px-4 py-2.5 text-sm text-gray-800" }, rowData.assigned_user?.name), /* @__PURE__ */ import_react23.default.createElement("td", { className: "cursor-pointer px-6 py-4 text-right text-sm font-medium leading-5" }, /* @__PURE__ */ import_react23.default.createElement("a", { className: "text-indigo-600", onClick: () => showTask(rowData.slug) }, "Show")), /* @__PURE__ */ import_react23.default.createElement(
-  "td",
-  {
-    className: "cursor-pointer px-6 py-4 text-right\n            text-sm font-medium leading-5"
-  },
-  /* @__PURE__ */ import_react23.default.createElement(
-    "a",
+var Row = ({
+  type: type3 = "pending",
+  data,
+  destroyTask,
+  showTask,
+  handleProgressToggle,
+  starTask
+}) => {
+  const isCompleted = type3 === "completed";
+  const toggledProgress = isCompleted ? "pending" : "completed";
+  return /* @__PURE__ */ import_react23.default.createElement("tbody", { className: "divide-y divide-gray-200 bg-white" }, data.map((rowData) => /* @__PURE__ */ import_react23.default.createElement("tr", { key: rowData.id }, /* @__PURE__ */ import_react23.default.createElement("td", { className: "border-r border-gray-300 py-2.5 px-4 text-center" }, /* @__PURE__ */ import_react23.default.createElement(
+    Tooltip_default,
     {
-      className: "text-red-500\n              hover:text-red-700",
-      onClick: () => destroyTask(rowData.slug)
+      tooltipContent: isCompleted ? "Mark as incomplete" : "Mark as completed"
     },
-    "Delete"
-  )
-))));
+    /* @__PURE__ */ import_react23.default.createElement(
+      "input",
+      {
+        checked: isCompleted,
+        className: "form-checkbox h-4 w-4 cursor-pointer rounded border-gray-300 text-indigo-600 focus:text-indigo-600",
+        type: "checkbox",
+        onChange: () => handleProgressToggle({
+          slug: rowData.slug,
+          progress: toggledProgress
+        })
+      }
+    )
+  )), /* @__PURE__ */ import_react23.default.createElement(
+    "td",
+    {
+      className: (0, import_classnames6.default)(
+        "border-r border-gray-300 px-4 py-2.5 text-sm font-medium capitalize text-indigo-600",
+        {
+          "cursor-pointer": !isCompleted,
+          "cursor-not-allowed line-through": isCompleted
+        }
+      ),
+      onClick: () => !isCompleted && showTask(rowData.slug)
+    },
+    /* @__PURE__ */ import_react23.default.createElement(Tooltip_default, { tooltipContent: rowData.title }, /* @__PURE__ */ import_react23.default.createElement("span", null, rowData.title))
+  ), !isCompleted && /* @__PURE__ */ import_react23.default.createElement(import_react23.default.Fragment, null, /* @__PURE__ */ import_react23.default.createElement("td", { className: "whitespace-no-wrap border-r border-gray-300 px-4 py-2.5 text-sm text-gray-800" }, rowData.assigned_user.name), /* @__PURE__ */ import_react23.default.createElement("td", { className: "whitespace-no-wrap border-r border-gray-300 px-4 py-2.5 text-center text-sm text-gray-800" }, rowData.comments_count), /* @__PURE__ */ import_react23.default.createElement("td", { className: "cursor-pointer px-4 py-2.5 text-center" }, /* @__PURE__ */ import_react23.default.createElement("button", { onClick: () => starTask(rowData.slug, rowData.status) }, /* @__PURE__ */ import_react23.default.createElement(
+    "i",
+    {
+      className: (0, import_classnames6.default)(
+        "text-2xl transition duration-300 ease-in-out hover:text-yellow-600",
+        {
+          "ri-star-line text-gray-400": rowData.status !== "starred"
+        },
+        {
+          "ri-star-fill text-yellow-500": rowData.status === "starred"
+        }
+      )
+    }
+  )))), isCompleted && /* @__PURE__ */ import_react23.default.createElement("td", { className: "cursor-pointer px-4 py-2.5 text-center" }, /* @__PURE__ */ import_react23.default.createElement(Tooltip_default, { tooltipContent: "Delete" }, /* @__PURE__ */ import_react23.default.createElement("button", { onClick: () => destroyTask(rowData.slug) }, /* @__PURE__ */ import_react23.default.createElement("i", { className: "ri-delete-bin-line text-2xl text-gray-400 transition duration-300 ease-in-out hover:text-red-500" })))))));
+};
 Row.propTypes = {
   data: import_prop_types8.default.array.isRequired,
+  type: import_prop_types8.default.string,
   destroyTask: import_prop_types8.default.func,
-  showTask: import_prop_types8.default.func
+  showTask: import_prop_types8.default.func,
+  handleProgressToggle: import_prop_types8.default.func,
+  starTask: import_prop_types8.default.func
 };
 var Row_default = Row;
 
 // app/javascript/src/components/Tasks/Table/index.jsx
-var Table = ({ data, showTask, destroyTask }) => /* @__PURE__ */ import_react24.default.createElement("div", { className: "inline-block min-w-full" }, /* @__PURE__ */ import_react24.default.createElement("table", { className: "min-w-full border-collapse border border-gray-300" }, /* @__PURE__ */ import_react24.default.createElement(Header_default, null), /* @__PURE__ */ import_react24.default.createElement(Row_default, { data, destroyTask, showTask })));
+var Table = ({
+  type: type3 = "pending",
+  data,
+  destroyTask,
+  showTask,
+  handleProgressToggle,
+  starTask
+}) => /* @__PURE__ */ import_react24.default.createElement("div", { className: "inline-block min-w-full" }, /* @__PURE__ */ import_react24.default.createElement("table", { className: "min-w-full border-collapse border border-gray-300" }, /* @__PURE__ */ import_react24.default.createElement(Header_default, { type: type3 }), /* @__PURE__ */ import_react24.default.createElement(
+  Row_default,
+  {
+    data,
+    destroyTask,
+    handleProgressToggle,
+    showTask,
+    starTask,
+    type: type3
+  }
+)));
 var Table_default = Table;
 
 // app/javascript/src/components/Dashboard/index.jsx
 var Dashboard = ({ history }) => {
-  const [tasks, setTasks] = (0, import_react25.useState)([]);
+  const [pendingTasks, setPendingTasks] = (0, import_react25.useState)([]);
+  const [completedTasks, setCompletedTasks] = (0, import_react25.useState)([]);
   const [loading, setLoading] = (0, import_react25.useState)(true);
   const fetchTasks = async () => {
     try {
       const {
-        data: { tasks: tasks2 }
+        data: {
+          tasks: { pending, completed }
+        }
       } = await tasks_default.fetch();
-      setTasks(tasks2);
+      setPendingTasks(pending);
+      setCompletedTasks(completed);
     } catch (error2) {
       logger.error(error2);
     } finally {
       setLoading(false);
     }
   };
+  const handleProgressToggle = async ({ slug, progress }) => {
+    try {
+      await tasks_default.update({
+        slug,
+        payload: { progress },
+        quiet: true
+      });
+      await fetchTasks();
+    } catch (error2) {
+      logger.error(error2);
+    }
+  };
   const destroyTask = async (slug) => {
     try {
-      await tasks_default.destroy(slug);
+      await tasks_default.destroy({ slug, quiet: true });
       await fetchTasks();
     } catch (error2) {
       logger.error(error2);
@@ -47579,16 +48110,46 @@ var Dashboard = ({ history }) => {
   const showTask = (slug) => {
     history.push(`/tasks/${slug}/show`);
   };
+  const starTask = async (slug, status) => {
+    try {
+      const toggledStatus = status === "starred" ? "unstarred" : "starred";
+      await tasks_default.update({
+        slug,
+        payload: { status: toggledStatus },
+        quiet: true
+      });
+      await fetchTasks();
+    } catch (error2) {
+      logger.error(error2);
+    }
+  };
   (0, import_react25.useEffect)(() => {
     fetchTasks();
   }, []);
   if (loading) {
     return /* @__PURE__ */ import_react25.default.createElement("div", { className: "h-screen w-screen" }, /* @__PURE__ */ import_react25.default.createElement(PageLoader_default, null));
   }
-  if (either_default(isNil_default, isEmpty_default)(tasks)) {
+  if (all_default(either_default(isNil_default, isEmpty_default), [pendingTasks, completedTasks])) {
     return /* @__PURE__ */ import_react25.default.createElement(Container_default, null, /* @__PURE__ */ import_react25.default.createElement("h1", { className: "my-5 text-center text-xl leading-5" }, "You have not created or been assigned any tasks \u{1F973}"));
   }
-  return /* @__PURE__ */ import_react25.default.createElement(Container_default, null, /* @__PURE__ */ import_react25.default.createElement("div", { className: "flex flex-col gap-y-8" }, /* @__PURE__ */ import_react25.default.createElement(PageTitle_default, { title: "Todo list" }), /* @__PURE__ */ import_react25.default.createElement(Table_default, { data: tasks, destroyTask, showTask })));
+  return /* @__PURE__ */ import_react25.default.createElement(Container_default, null, /* @__PURE__ */ import_react25.default.createElement("div", { className: "flex flex-col gap-y-8" }, /* @__PURE__ */ import_react25.default.createElement(PageTitle_default, { title: "Todo list" }), !either_default(isNil_default, isEmpty_default)(pendingTasks) && /* @__PURE__ */ import_react25.default.createElement(
+    Table_default,
+    {
+      data: pendingTasks,
+      destroyTask,
+      handleProgressToggle,
+      showTask,
+      starTask
+    }
+  ), !either_default(isNil_default, isEmpty_default)(completedTasks) && /* @__PURE__ */ import_react25.default.createElement(
+    Table_default,
+    {
+      data: completedTasks,
+      destroyTask,
+      handleProgressToggle,
+      type: "completed"
+    }
+  )));
 };
 var Dashboard_default = Dashboard;
 
@@ -48161,7 +48722,7 @@ function peek() {
 function caret() {
   return position;
 }
-function slice(begin, end) {
+function slice3(begin, end) {
   return substr(characters, begin, end);
 }
 function token(type3) {
@@ -48209,7 +48770,7 @@ function dealloc(value) {
   return characters = "", value;
 }
 function delimit(type3) {
-  return trim2(slice(position - 1, delimiter(type3 === 91 ? type3 + 2 : type3 === 40 ? type3 + 1 : type3)));
+  return trim2(slice3(position - 1, delimiter(type3 === 91 ? type3 + 2 : type3 === 40 ? type3 + 1 : type3)));
 }
 function whitespace(type3) {
   while (character = peek())
@@ -48223,7 +48784,7 @@ function escaping(index5, count2) {
   while (--count2 && next())
     if (character < 48 || character > 102 || character > 57 && character < 65 || character > 70 && character < 97)
       break;
-  return slice(index5, caret() + (count2 < 6 && peek() == 32 && next() == 32));
+  return slice3(index5, caret() + (count2 < 6 && peek() == 32 && next() == 32));
 }
 function delimiter(type3) {
   while (next())
@@ -48255,12 +48816,12 @@ function commenter(type3, index5) {
       break;
     else if (type3 + character === 42 + 42 && peek() === 47)
       break;
-  return "/*" + slice(index5, position - 1) + "*" + from(type3 === 47 ? type3 : next());
+  return "/*" + slice3(index5, position - 1) + "*" + from(type3 === 47 ? type3 : next());
 }
 function identifier(index5) {
   while (!token(peek()))
     next();
-  return slice(index5, position);
+  return slice3(index5, position);
 }
 
 // node_modules/stylis/src/Parser.js
@@ -48486,7 +49047,7 @@ var identifierWithPointTracking = function identifierWithPointTracking2(begin, p
     }
     next();
   }
-  return slice(begin, position);
+  return slice3(begin, position);
 };
 var toRules = function toRules2(parsed, points) {
   var index5 = -1;
@@ -49118,8 +49679,8 @@ function serializeStyles(args, registered, mergedProps) {
 // node_modules/@emotion/use-insertion-effect-with-fallbacks/dist/emotion-use-insertion-effect-with-fallbacks.browser.esm.js
 init_define_process_env();
 var React24 = __toESM(require_react());
-var syncFallback = function syncFallback2(create2) {
-  return create2();
+var syncFallback = function syncFallback2(create3) {
+  return create3();
 };
 var useInsertionEffect3 = React24["useInsertionEffect"] ? React24["useInsertionEffect"] : false;
 var useInsertionEffectAlwaysWithSyncFallback = useInsertionEffect3 || syncFallback;
@@ -49233,7 +49794,7 @@ function keyframes() {
     name,
     styles: "@keyframes " + name + "{" + insertable.styles + "}",
     anim: 1,
-    toString: function toString4() {
+    toString: function toString6() {
       return "_EMO_" + this.name + "_" + this.styles + "_EMO_";
     }
   };
@@ -52671,12 +53232,61 @@ var Create_default = Create;
 
 // app/javascript/src/components/Tasks/Show.jsx
 init_define_process_env();
+var import_react37 = __toESM(require_react());
+
+// app/javascript/src/apis/comments.js
+init_define_process_env();
+var create2 = (payload) => axios_default.post(`/comments`, payload);
+var commentsApi = {
+  create: create2
+};
+var comments_default = commentsApi;
+
+// app/javascript/src/components/Comments/index.jsx
+init_define_process_env();
 var import_react36 = __toESM(require_react());
+var Comments = ({
+  comments,
+  loading,
+  setNewComment,
+  newComment,
+  handleSubmit
+}) => /* @__PURE__ */ import_react36.default.createElement(import_react36.default.Fragment, null, /* @__PURE__ */ import_react36.default.createElement("form", { className: "mx-auto mb-4 w-full space-y-4", onSubmit: handleSubmit }, /* @__PURE__ */ import_react36.default.createElement("div", { className: "space-y-1" }, /* @__PURE__ */ import_react36.default.createElement("label", { className: "block text-sm font-medium text-gray-800" }, "Comment"), /* @__PURE__ */ import_react36.default.createElement(
+  "textarea",
+  {
+    className: "block w-full flex-1 resize-none rounded-md border border-gray-300 p-2 text-gray-700 shadow-sm focus:border-gray-400 focus:ring-gray-400 sm:text-sm",
+    placeholder: "Ask a question or post an update",
+    rows: 3,
+    value: newComment,
+    onChange: (e) => setNewComment(e.target.value)
+  }
+)), /* @__PURE__ */ import_react36.default.createElement(Button_default, { buttonText: "Comment", loading, type: "submit" })), comments.length > 0 && /* @__PURE__ */ import_react36.default.createElement("div", { className: "space-y-3" }, /* @__PURE__ */ import_react36.default.createElement("h2", { className: "text-lg font-semibold" }, "Comments"), /* @__PURE__ */ import_react36.default.createElement("div", { className: "flex flex-col gap-y-2" }, comments.map((comment2, index5) => /* @__PURE__ */ import_react36.default.createElement(
+  "div",
+  {
+    className: "flex justify-between rounded border border-gray-300 bg-gray-100 px-4 py-3 text-base leading-5",
+    key: comment2.id
+  },
+  /* @__PURE__ */ import_react36.default.createElement("p", { className: "text-gray-800", key: index5 }, comment2.content),
+  /* @__PURE__ */ import_react36.default.createElement("p", { className: "text-gray-600" }, new Date(comment2.created_at).toLocaleString())
+)))));
+var Comments_default = Comments;
+
+// app/javascript/src/components/Tasks/Show.jsx
 var Show = () => {
-  const [task, setTask] = (0, import_react36.useState)([]);
-  const [pageLoading, setPageLoading] = (0, import_react36.useState)(true);
+  const [task, setTask] = (0, import_react37.useState)([]);
+  const [pageLoading, setPageLoading] = (0, import_react37.useState)(true);
+  const [newComment, setNewComment] = (0, import_react37.useState)("");
+  const [loading, setLoading] = (0, import_react37.useState)(false);
   const { slug } = useParams();
   const history = useHistory();
+  const destroyTask = async () => {
+    try {
+      await tasks_default.destroy({ slug: task.slug });
+      history.push("/");
+    } catch (error2) {
+      logger.error(error2);
+    }
+  };
   const updateTask = () => {
     history.push(`/tasks/${task.slug}/edit`);
   };
@@ -52692,13 +53302,38 @@ var Show = () => {
       history.push("/");
     }
   };
-  (0, import_react36.useEffect)(() => {
+  const addComment = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    try {
+      await comments_default.create({
+        content: newComment,
+        task_id: task.id
+      });
+      fetchTaskDetails();
+      setNewComment("");
+    } catch (error2) {
+      logger.error(error2);
+    } finally {
+      setLoading(false);
+    }
+  };
+  (0, import_react37.useEffect)(() => {
     fetchTaskDetails();
   }, []);
   if (pageLoading) {
-    return /* @__PURE__ */ import_react36.default.createElement(PageLoader_default, null);
+    return /* @__PURE__ */ import_react37.default.createElement(PageLoader_default, null);
   }
-  return /* @__PURE__ */ import_react36.default.createElement(Container_default, null, /* @__PURE__ */ import_react36.default.createElement("div", { className: "flex flex-col gap-y-8" }, /* @__PURE__ */ import_react36.default.createElement("div", { className: "mt-8 flex w-full items-start justify-between gap-x-6" }, /* @__PURE__ */ import_react36.default.createElement("div", { className: "flex flex-col gap-y-2" }, /* @__PURE__ */ import_react36.default.createElement("h2", { className: "text-3xl font-semibold" }, task?.title), /* @__PURE__ */ import_react36.default.createElement("div", { className: "flex items-center gap-x-6" }, /* @__PURE__ */ import_react36.default.createElement("p", { className: "text-base text-gray-700" }, /* @__PURE__ */ import_react36.default.createElement("span", { className: "font-semibold" }, "Assigned to: "), task?.assigned_user?.name), /* @__PURE__ */ import_react36.default.createElement("p", { className: "text-base text-gray-700" }, /* @__PURE__ */ import_react36.default.createElement("span", { className: "font-semibold" }, "Created by: "), task?.task_owner?.name))), /* @__PURE__ */ import_react36.default.createElement("div", { className: "flex items-center justify-end gap-x-3" }, /* @__PURE__ */ import_react36.default.createElement(
+  return /* @__PURE__ */ import_react37.default.createElement(Container_default, null, /* @__PURE__ */ import_react37.default.createElement("div", { className: "flex flex-col gap-y-8" }, /* @__PURE__ */ import_react37.default.createElement("div", { className: "mt-8 flex w-full items-start justify-between gap-x-6" }, /* @__PURE__ */ import_react37.default.createElement("div", { className: "flex flex-col gap-y-2" }, /* @__PURE__ */ import_react37.default.createElement("h2", { className: "text-3xl font-semibold" }, task?.title), /* @__PURE__ */ import_react37.default.createElement("div", { className: "flex items-center gap-x-6" }, /* @__PURE__ */ import_react37.default.createElement("p", { className: "text-base text-gray-700" }, /* @__PURE__ */ import_react37.default.createElement("span", { className: "font-semibold" }, "Assigned to: "), task?.assigned_user?.name), /* @__PURE__ */ import_react37.default.createElement("p", { className: "text-base text-gray-700" }, /* @__PURE__ */ import_react37.default.createElement("span", { className: "font-semibold" }, "Created by: "), task?.task_owner?.name))), /* @__PURE__ */ import_react37.default.createElement("div", { className: "flex items-center justify-end gap-x-3" }, /* @__PURE__ */ import_react37.default.createElement(
+    Button_default,
+    {
+      buttonText: "Delete",
+      icon: "delete-bin-5-line",
+      size: "small",
+      style: "secondary",
+      onClick: destroyTask
+    }
+  ), /* @__PURE__ */ import_react37.default.createElement(
     Button_default,
     {
       buttonText: "Edit",
@@ -52707,20 +53342,29 @@ var Show = () => {
       style: "secondary",
       onClick: updateTask
     }
-  )))));
+  ))), /* @__PURE__ */ import_react37.default.createElement(
+    Comments_default,
+    {
+      comments: task?.comments,
+      handleSubmit: addComment,
+      loading,
+      newComment,
+      setNewComment
+    }
+  )));
 };
 var Show_default = Show;
 
 // app/javascript/src/components/Tasks/Edit.jsx
 init_define_process_env();
-var import_react37 = __toESM(require_react());
+var import_react38 = __toESM(require_react());
 var Edit = ({ history }) => {
-  const [title, setTitle] = (0, import_react37.useState)("");
-  const [userId, setUserId] = (0, import_react37.useState)("");
-  const [assignedUser, setAssignedUser] = (0, import_react37.useState)("");
-  const [users, setUsers] = (0, import_react37.useState)([]);
-  const [loading, setLoading] = (0, import_react37.useState)(false);
-  const [pageLoading, setPageLoading] = (0, import_react37.useState)(true);
+  const [title, setTitle] = (0, import_react38.useState)("");
+  const [userId, setUserId] = (0, import_react38.useState)("");
+  const [assignedUser, setAssignedUser] = (0, import_react38.useState)("");
+  const [users, setUsers] = (0, import_react38.useState)([]);
+  const [loading, setLoading] = (0, import_react38.useState)(false);
+  const [pageLoading, setPageLoading] = (0, import_react38.useState)(true);
   const { slug } = useParams();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -52764,13 +53408,13 @@ var Edit = ({ history }) => {
     await Promise.all([fetchTaskDetails(), fetchUserDetails()]);
     setPageLoading(false);
   };
-  (0, import_react37.useEffect)(() => {
+  (0, import_react38.useEffect)(() => {
     loadData();
   }, []);
   if (pageLoading) {
-    return /* @__PURE__ */ import_react37.default.createElement("div", { className: "h-screen w-screen" }, /* @__PURE__ */ import_react37.default.createElement(PageLoader_default, null));
+    return /* @__PURE__ */ import_react38.default.createElement("div", { className: "h-screen w-screen" }, /* @__PURE__ */ import_react38.default.createElement(PageLoader_default, null));
   }
-  return /* @__PURE__ */ import_react37.default.createElement(Container_default, null, /* @__PURE__ */ import_react37.default.createElement("div", { className: "flex flex-col gap-y-8" }, /* @__PURE__ */ import_react37.default.createElement(PageTitle_default, { title: "Edit task" }), /* @__PURE__ */ import_react37.default.createElement(
+  return /* @__PURE__ */ import_react38.default.createElement(Container_default, null, /* @__PURE__ */ import_react38.default.createElement("div", { className: "flex flex-col gap-y-8" }, /* @__PURE__ */ import_react38.default.createElement(PageTitle_default, { title: "Edit task" }), /* @__PURE__ */ import_react38.default.createElement(
     Form_default,
     {
       assignedUser,
@@ -52789,7 +53433,7 @@ var Edit_default = Edit;
 var App = () => {
   const authToken = getFromLocalStorage("authToken");
   const isLoggedIn = !either_default(isNil_default, isEmpty_default)(authToken);
-  return /* @__PURE__ */ import_react38.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react38.default.createElement(ToastContainer, null), /* @__PURE__ */ import_react38.default.createElement(Switch, null, /* @__PURE__ */ import_react38.default.createElement(Route, { exact: true, component: Show_default, path: "/tasks/:slug/show" }), /* @__PURE__ */ import_react38.default.createElement(Route, { exact: true, component: Edit_default, path: "/tasks/:slug/edit" }), /* @__PURE__ */ import_react38.default.createElement(Route, { exact: true, component: Create_default, path: "/tasks/create" }), /* @__PURE__ */ import_react38.default.createElement(Route, { exact: true, component: Signup_default2, path: "/signup" }), /* @__PURE__ */ import_react38.default.createElement(Route, { exact: true, component: Login_default2, path: "/login" }), /* @__PURE__ */ import_react38.default.createElement(
+  return /* @__PURE__ */ import_react39.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react39.default.createElement(ToastContainer, null), /* @__PURE__ */ import_react39.default.createElement(Switch, null, /* @__PURE__ */ import_react39.default.createElement(Route, { exact: true, component: Show_default, path: "/tasks/:slug/show" }), /* @__PURE__ */ import_react39.default.createElement(Route, { exact: true, component: Edit_default, path: "/tasks/:slug/edit" }), /* @__PURE__ */ import_react39.default.createElement(Route, { exact: true, component: Create_default, path: "/tasks/create" }), /* @__PURE__ */ import_react39.default.createElement(Route, { exact: true, component: Signup_default2, path: "/signup" }), /* @__PURE__ */ import_react39.default.createElement(Route, { exact: true, component: Login_default2, path: "/login" }), /* @__PURE__ */ import_react39.default.createElement(
     PrivateRoute_default,
     {
       component: Dashboard_default,
