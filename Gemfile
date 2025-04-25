@@ -56,6 +56,12 @@ gem "ruby_audit", require: false
 
 gem "sidekiq", "~> 6.5.12"
 
+# For periodic sidekiq jobs
+gem "sidekiq-cron"
+
+# For opening mails in development env
+gem "letter_opener", group: :development
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
