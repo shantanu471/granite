@@ -29,7 +29,7 @@ gem "react-rails", "~> 2.7.1"
 gem "bcrypt", "~> 3.1.13"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", "~> 4.8", ">= 4.8.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -53,6 +53,8 @@ gem "minitest-bisect"
 
 gem "bundler-audit", require: false
 gem "ruby_audit", require: false
+
+gem "sidekiq", "~> 6.5.12"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
