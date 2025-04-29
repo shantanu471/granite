@@ -2,7 +2,7 @@ services:
   - type: web
     name: granite-oliver-smith
     runtime: ruby
-    repo: <repo-link>
+    repo: https://github.com/shantanu471/granite
     branch: main
     plan: free
     envVars:
